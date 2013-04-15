@@ -10,10 +10,6 @@ http://www.ericson.net/content/2011/10/when-maps-shouldnt-be-maps/
 
 Maps generally consist of geographic data (we’ll call this **geodata** for short) and a **system for visually representing** that data.
 
-***
-
----
-
 ## Part 1: Geodata ##
 
 ### Latitude and Longitude ###
@@ -23,7 +19,7 @@ Latitude ranges from -90 (the South Pole) to 90 (the North Pole), with 0 being t
 
 Longitude ranges from -180 (halfway around the world going west from the Prime Meridian) to 180 (halfway around the world going east from the Prime Meridian), with 0 being the prime meridian.  Yes, that means -180 and 180 are the same.
 
-[INSERT IMAGE]
+![Latitude/Longitude](https://raw.github.com/veltman/learninglunches/master/maps/images/latlng.png)
 
 If you are an old-timey sea captain, you may find or write latitude and longitude in degrees + minutes + seconds, like:
 
