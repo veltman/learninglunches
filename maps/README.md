@@ -3,7 +3,7 @@
 ## Are you sure? ##
 Just because something CAN be represented geographically doesn’t mean it should.  The relevant story may have nothing to do with geography.  Maps have biases.  Maps can be misleading.  They may emphasize land area in a way that obscures population density, or show “geographic” patterns that merely demonstrate an underlying demographic pattern.  **Before you proceed, make sure a map is what you actually want.**
 
-For a more detailed take on this question, read When Maps Shouldn’t Be Maps:
+For a more detailed take on this question, read When Maps Shouldn’t Be Maps:  
 http://www.ericson.net/content/2011/10/when-maps-shouldnt-be-maps/
 
 ## What maps are made of ##
@@ -165,38 +165,36 @@ The new hotness.  TopoJSON takes in a basic geodata format, like GeoJSON, and sp
 
 There are lots of good sources for geodata online.  Here are a few:
 
-**Natural Earth**
-http://www.naturalearthdata.com/
-Offers shapefile downloads of a few different data sets for the entire earth:
-    Cultural: country boundaries, state/province boundaries, roads, railroads, cities, airports, parks, etc.
-    Physical: coastline, islands, rivers, lakes, glaciers, etc.
+**Natural Earth**  
+http://www.naturalearthdata.com/  
+Offers shapefile downloads of a few different data sets for the entire earth: Cultural (country boundaries, state/province boundaries, roads, railroads, cities, airports, parks, etc.) and Physical (coastline, islands, rivers, lakes, glaciers, etc.).
 
-**US Census Bureau**
-http://www.census.gov/geo/maps-data/data/tiger.html
+**US Census Bureau**  
+http://www.census.gov/geo/maps-data/data/tiger.html  
 Detailed shapefiles or KML files for the entire US.
 
-**OpenStreetMap**
-http://www.openstreetmap.org/
+**OpenStreetMap**  
+http://www.openstreetmap.org/  
 A well-populated database of land, boundaries, roads, and landmarks for the entire earth.  This is available as a special XML format, and has to be converted to be used with most software.
 
-**Geocommons**
-http://geocommons.com/
+**Geocommons**  
+http://geocommons.com/  
 A wide variety of user-contributed geodata, easy to search, browse, or preview.
 
-**Wikimedia Commons**
-http://commons.wikimedia.org/
+**Wikimedia Commons**  
+http://commons.wikimedia.org/  
 Lots of detailed maps in SVG format, which can be easily used and modified for the web (see below).
 
-**Google**
+**Google**  
 If you don’t have the map data you need, look around!  You’d be surprised how much is out there once you start looking.
 
-**ogr2ogr Converter**
-http://ogre.adc4gis.com/
+**ogr2ogr Converter**  
+http://ogre.adc4gis.com/  
 Not a source of data, but a handy converter if you need to convert between a shapefile and GeoJSON.
 
-**Desktop GIS Software**
-http://www.qgis.org/ (free)
-http://www.esri.com/software/arcgis (very not free)
+**Desktop GIS Software**  
+http://www.qgis.org/ (free)  
+http://www.esri.com/software/arcgis (very not free)  
 You'll want to start getting the hang of desktop GIS software, especially if you'll be working with shapefiles.  Quantum GIS is free and excellent.  Arc GIS is also very powerful but very expensive.  These are not a data source, per se, but an important method of whipping imperfect data into shape before mapping it.
 
 ---
@@ -205,7 +203,7 @@ You'll want to start getting the hang of desktop GIS software, especially if you
 
 The point of all this data drudgery is to make a cool map, right?  So let's forget about the curly braces and the geometry lessons and get to it.  Broadly speaking, you have three options for mapping your data for display on the web.  Before we look at them, make sure you ask yourself the following question:
 
-**Does my map need to be interactive?**
+**Does my map need to be interactive?**  
 Just because you CAN make your map interactive and animated doesn't mean you should.  Some of the best maps in the news are just images.  Images are great for the web because virtually everything supports them.  This isn't exactly an alternative to other methods, because in order to make an image, you'll need to make a map with something else first: desktop GIS software, Adobe Illustrator, or one of the three options below.  Once you have the display you want, you can either take a screengrab or export it as an image.  Even still, avoiding unnecessary interactivity and complexity in favor of flat images where appropriate will cut down on a lot of mapping headaches.
 
 ### Option 1: Slippy Maps ###
@@ -235,19 +233,19 @@ As a loose rule of thumb, slippy maps are a good choice to the extent that:
 One of the best resources for making your own slippy map is Leaflet.  This library will do most of the dirty work of a slippy map and let you focus on customizing it.  You'll have to write a little bit of JavaScript, but probably a lot less than you think:
 http://leafletjs.com/
 
-For tiles, you can generate your own with TileMill:
+For tiles, you can generate your own with TileMill:  
 http://mapbox.com/tilemill/
 
-You can create custom-styled tiles based on OpenStreetMap data with CloudMade:
+You can create custom-styled tiles based on OpenStreetMap data with CloudMade:  
 http://developers.cloudmade.com/projects/show/tiles
 
-You can also borrow beautiful tiles from Stamen Design:
+You can also borrow beautiful tiles from Stamen Design:  
 http://maps.stamen.com/
 
-Or use Google Maps for your base tiles:
+Or use Google Maps for your base tiles:  
 https://developers.google.com/maps/
 
-MapBox has a detailed guide on the nuts & bolts of slippy maps:
+MapBox has a detailed guide on the nuts & bolts of slippy maps:  
 http://mapbox.com/developers/guide/
 
 ### Option 2: JavaScript + SVG/Canvas ###
@@ -269,29 +267,29 @@ SVG/Canvas maps are not great because:
 
 #### How do I make one? ####
 
-By far the most popular method for dynamically-drawn maps is d3, a fantastic but sometimes mind-bending JavaScript library:
+By far the most popular method for dynamically-drawn maps is d3, a fantastic but sometimes mind-bending JavaScript library:  
 http://d3js.org/
 
-There are lots of d3 mapping examples and tutorials, but they probably won't make sense without a healthy amount of JavaScript under your belt:
-http://bost.ocks.org/mike/map/
-http://www.schneidy.com/Tutorials/MapsTutorial.html
-http://www.d3noob.org/2013/03/a-simple-d3js-map-explained.html
+There are lots of d3 mapping examples and tutorials, but they probably won't make sense without a healthy amount of JavaScript under your belt:  
+http://bost.ocks.org/mike/map/  
+http://www.schneidy.com/Tutorials/MapsTutorial.html  
+http://www.d3noob.org/2013/03/a-simple-d3js-map-explained.html  
 
  
 ### Option 3: Let someone else do most of the work ###
 If you have geographic data ready there are a number of services out there that will handle a lot of the actual mapping for you, with varying levels of control over the output:
 
-**Google Maps**
+**Google Maps**  
 https://maps.google.com/
 
-**Google Earth**
+**Google Earth**  
 http://earth.google.com/
 
-**Google Fusion Tables**
+**Google Fusion Tables**  
 http://www.google.com/drive/start/apps.html#fusiontables
 
-**CartoDB**
+**CartoDB**  
 http://cartodb.com
 
-**BatchGeo**
+**BatchGeo**  
 http://batchgeo.com/
