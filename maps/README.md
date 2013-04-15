@@ -233,10 +233,10 @@ As a loose rule of thumb, slippy maps are a good choice to the extent that:
 
 In order to use geodata to make a slippy map, you are really making two maps.  First, you need to use your data to make tiles for the background.  You have to feed a set of data about where land is, where roads are, where points of interest are, into a piece of software and have it generate images based on that.  You can skip this step if you are content with one of the other tilesets already out there (see below).  Then, you need to use the geodata again to add things on top like markers or highlighted lines.
 
-One of the best resources for making your own slippy map is Leaflet.  This library will do most of the dirty work of a slippy map and let you focus on customizing it.  You'll have to write a little bit of JavaScript, but probably a lot less than you think:
+One of the best resources for making your own slippy map is Leaflet.  This library will do most of the dirty work of a slippy map and let you focus on customizing it.  You'll have to write a little bit of JavaScript, but probably a lot less than you think:  
 http://leafletjs.com/
 
-For tiles, you can generate your own with TileMill:  
+You can generate your own background tiles with TileMill:  
 http://mapbox.com/tilemill/
 
 You can create custom-styled tiles based on OpenStreetMap data with CloudMade:  
