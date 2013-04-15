@@ -211,15 +211,16 @@ Whether you know it or not, you've used a lot of slippy maps.  Google Maps is a 
 
 Slippy maps are great because:
 
-1. They're easy on browsers and bandwidth.  They only need to load the part of the world you're looking at, and they're image-based.  Every major browser and device supports them.
-2. People are used to them.  Thanks to the popularity of Google Maps, everyone has lots of practice using slippy maps.
-3. They're pretty easy to make responsive to screen size.  Just shrink the map box, the underlying tiles don't change.
-4. Zooming and panning are built right in.
+1. They're **easy on browsers and bandwidth**.  They only need to load the part of the world you're looking at, and they're image-based.  Every major browser and device supports them.
+2. **People are used to them**.  Thanks to the popularity of Google Maps, everyone has lots of practice using slippy maps.
+3. They're pretty **easy to make responsive** to screen size.  Just shrink the map box, the underlying tiles don't change.
+4. They gracefully support **all the basic mapping features**, like zooming, panning, and adding markers.
 
 Slippy maps are not great because:
 
-2. Generating a complete set of your own tiles is a complicated task, requiring data, styling, and some technical savvy.  You can reuse tiles from an old map, or borrow someone else's tiles, but in either case you sacrifice **fine visual control.** 
-2. Image-based tiles aren't very useful if everything on your map needs to be dynamic.
+1. Generating your own tiles can be a complicated task, requiring data, styling, and some technical savvy.
+2. Even if you reuse tiles from an old map, or borrow someone else's tiles, you **sacrifice fine visual control.** 
+2. Image-based tiles are **not well-suited for making things dynamic**.
 
 As a loose rule of thumb, slippy maps are a good choice to the extent that:
 
@@ -251,19 +252,20 @@ http://mapbox.com/developers/guide/
 ### Option 2: JavaScript + SVG/Canvas ###
 Another option is to draw a map from scratch right in a web page.  This is typically done using either SVG or the HTML5 `<canvas>` element, which are both methods of creating a drawing space in a webpage and then drawing lots of lines and shapes based on a set of instructions.  For example, if you create a drawing space that is 500x500 and tell it to draw a line from 250,0 to 250,500, you'll get a vertical line down the middle of the canvas.  Unlike maps, which speak lat/lng, these methods speak pixels.  The point in the upper-left corner is 0,0.  Any other pixel is X,Y where X is the number of pixels to the right of that corner, and Y is the number of pixels below it.
 
-[INSERT IMAGE]
+[INSERT DIAGRAM]
 
 SVG/Canvas maps are great because:
 
-1. You have total visual control.  You're starting with a blank canvas and you can dictate everything about how it looks.
-2. They're easy to make interactive and dynamic.  All the pieces of the map are elements on the page just like anything else, so you can style and manipulate them with CSS and JavaScript.
+1. You have **total visual control**.  You're starting with a blank canvas and you can dictate everything about how it looks.
+2. They're easy to make **interactive and dynamic**.  All the pieces of the map are elements on the page just like anything else, so you can style and manipulate them with CSS and JavaScript.
+3. You **don't necessarily need real geodata** to make one.  If you already have an SVG (like the [Wikimedia maps of the world](http://commons.wikimedia.org/wiki/Maps_of_the_world)) you can use that instead and skip all the lat/lng business.
 
 SVG/Canvas maps are not great because:
 
-1. They aren't that backwards-compatible.  IE8 doesn't support them.
-2. Because your data is lat/lngs and the output is pixels, you need to deal with map projections to translate it before you draw.
-3. Performance becomes an issue as they get more complex.
-4. Implementing them generally requires a reasonably high level of comfort with JavaScript.
+1. They have **browser compatibility issues**.  IE8 doesn't support them.  (You can add support for IE7 and IE8 with certain libraries)
+2. Because your data is lat/lngs and the output is pixels, you **need to deal with map projections** to translate it before you draw.
+3. **Performance becomes an issue** as they get more complex.
+4. Implementing them generally requires a reasonably **high level of comfort with JavaScript**.
 
 #### How do I make one? ####
 
@@ -275,6 +277,8 @@ http://bost.ocks.org/mike/map/
 http://www.schneidy.com/Tutorials/MapsTutorial.html  
 http://www.d3noob.org/2013/03/a-simple-d3js-map-explained.html  
 
+If you want to go easy on the JavaScript, Kartograph.js is also a good option, and as a bonus, it includes support for IE7 and IE8:  
+http://kartograph.org/
  
 ### Option 3: Let someone else do most of the work ###
 If you have geographic data ready there are a number of services out there that will handle a lot of the actual mapping for you, with varying levels of control over the output:
