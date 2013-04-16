@@ -364,6 +364,8 @@ http://cartodb.com
 **BatchGeo**  
 http://batchgeo.com/
 
+---
+
 ## Questions/Comments/Suggestions ##
 Noah Veltman  
 Web: http://noahveltman.com  
