@@ -39,10 +39,10 @@ Every database consists of **tables**.  Think of a table like a single worksheet
 #### Columns ####
 Every column is given a **name** (like 'Address') and a defined **column type** (like 'Integer,' 'Date', 'Date+Time', or 'Text').  You have to pick a column type and it stays the same for every row.  The database will coerce all the data you put in to that type.  This sounds annoying but is very helpful.  If you try to put the wrong kind of data in a column, it will get upset.  This tells you that there's a problem with your data, your understanding of the data, or both.  Excel would just let you continue being wrong until it comes back to bite you.
  
-You can also specify helpful things like…
-… whether a column can have duplicate values.
-… whether a column can be empty.
-… the default value for a column if you don't specify one.
+You can also specify helpful things like…  
+  … whether a column can have duplicate values.  
+  … whether a column can be empty.  
+  … the default value for a column if you don't specify one.  
 
 *Columns define the structure of your data*.
 
@@ -81,14 +81,15 @@ Other people need to work with the same data.
 Because databases have a learning curve, it makes sense not to dive in too deep right away.  Start off using it only in cases where the advantage is especially strong and your needs are pretty simple.  As your comfort level increases, you'll increasingly look towards databases to get what you want faster.
  
 ### Option 1: SQLite ###
-SQLite is a good way to get started.  You can install the "SQLite Manager" add-on for Firefox and do everything within the browser.  
+SQLite is a good way to get started.  You can install the "SQLite Manager" add-on for Firefox and do everything within the browser.
+
 A SQL tutorial based on SQLite: https://github.com/tthibo/SQL-Tutorial
 
 ### Option 2: Microsoft Access ###
 Microsoft Access runs on SQL and presents a more traditional desktop software interface.  Depending on who you ask, it's either a helpful tool or just makes things more confusing.  I wouldn't personally recommend it, but your mileage may vary.
 
 ### Option 3: Set up a shared web hosting account ###
-You can set up a shared web hosting account as a sandbox to play with this.  This can cost as little as £20 a year.  These accounts typically come with an interface to let you create, edit, and interact with databases without writing any SQL.  They also give you a place to play around with any other web-related skills you're interested in and share the results with others!
+You can set up a shared web hosting account as a sandbox to play with this.  This can cost as little as £20 a year.  These accounts typically come with an interface to let you create, edit, and interact with databases without writing any SQL.  They also give you a place to play around with any other web-related skills you're interested in and share the results with others!  
 A Small Orange (a good, cheap hosting option): http://asmallorange.com/
 
 ### Option 4: Install MySQL or PostgreSQL on your computer ###
@@ -99,7 +100,7 @@ You can install MAMP (http://www.mamp.info/) on a Mac or WAMP (http://www.wampse
 ## Appendix: querying for fun and profit ##
 Much of the power of relational databases comes from SQL, a very flexible language for asking a database questions or giving it orders.  The learning curve is steeper than Excel, but once you get the hang of it you can quickly answer almost any question about your data.  Let's go through some brief examples of how a desired action looks in SQL.
 
-The basic building blocks of SQL are four verbs: SELECT (look up something), UPDATE (change some existing rows), INSERT (add some new rows), DELETE (delete some rows).  There are many other verbs but you will use these the most, especially SELECT.
+The basic building blocks of SQL are four verbs: `SELECT` (look up something), `UPDATE` (change some existing rows), `INSERT` (add some new rows), `DELETE` (delete some rows).  There are many other verbs but you will use these the most, especially `SELECT`.
 
 Let's imagine a table called athletes of Olympic athletes with six columns:
 
@@ -109,6 +110,7 @@ Let's imagine a table called athletes of Olympic athletes with six columns:
     height
     weight
     gender
+
 
 When creating our table, we might also specify things like "country can be empty" or "gender must be either M or F."
 
@@ -127,12 +129,14 @@ When creating our table, we might also specify things like "country can be empty
     FROM athletes
     WHERE country = 'Great Britain'
 
+
 **Query 3: What country is the heaviest on average?  This will take all the rows and put them into groups by country.  It will show you a list of country names and the average weight for each group.**
 
     SELECT
     country,AVG(WEIGHT)
     FROM athletes
     GROUP BY country
+
 
 **Query 4: What birth month produces the most Olympic athletes?  Maybe you want to test an astrological theory about Leos being great athletes.  This will show you how many Olympic athletes were born in each month.**
 
@@ -141,12 +145,14 @@ When creating our table, we might also specify things like "country can be empty
     FROM athletes
     GROUP BY MONTHNAME(birthdate)
 
+
 **Query 5: Add a new athlete to the table.  To insert a row, you specify the columns you're adding (because you don't necessarily need to add all of them every time), and the value for each.**
 
     INSERT
     INTO athletes
     (name,country,height,weight,gender)
     VALUES ('Andrew Leimdorfer','Great Britain',180,74.8,'M')
+
 
 **Query 6: Get all male athletes in order of height:weight ratio.  Maybe you would notice something strange about Canadian sprinter Ian Warner.**
 
@@ -156,6 +162,7 @@ When creating our table, we might also specify things like "country can be empty
     WHERE gender = 'M'
     ORDER BY height/weight ASC
 
+
 **Query 7: If you got your data from london2012.com, you would think 5' 7"  Ian Warner was 160 kg, because his weight was probably entered in lbs instead.  Let's fix that by UPDATEing his row.**
 
     UPDATE
@@ -163,11 +170,13 @@ When creating our table, we might also specify things like "country can be empty
     SET weight = weight/2.2
     WHERE NAME = 'Ian Warner'
 
+
 **Query 8: Delete all the American and Canadian athletes, those jerks.**
 
     DELETE
     FROM athletes
     WHERE country = 'United States of America' OR country = 'Canada';
+
 
 Once you look at enough queries you'll see that a query is like a sentence with a grammar.  It has a "verb" (what kind of action do I want?), an "object" (what tables do I want to do the action to?), and optional "adverbs" (how specifically do I want to do the action?).  The "adverbs" include details like "sort by this column" and "only do this for certain rows."
 
@@ -198,7 +207,9 @@ You might create a table for athletes with basic info like height & weight, a ta
     WHERE athletes.id = results.athlete_id AND event.id = results.event_id
     AND event.date = DATE(NOW()) AND results.medal = 'Gold'
 
+
 **How many medals does each country have?**
+
     SELECT
     countries.name, COUNT(*)
     FROM athletes, countries, results, events
