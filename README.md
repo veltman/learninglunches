@@ -12,8 +12,8 @@ To that end, these materials will involve as little actual code as possible.  Fo
 Because these materials are for actual in-person lunch talks, sometimes they will be missing a little bit of "you had to be there," but I'm writing them with the intent that they can be helpful on their own.
 
 ### Current Topics ###
-* [SQL: The Prequel (Databases vs. Excel)](databases/README.md)
-* [Making Maps for the Web](maps/README.md)
+* [SQL: The Prequel (Databases vs. Excel)](databases/)
+* [Making Maps for the Web](maps/)
 
 ### Future Topics ###
 * How a Web Server Works
