@@ -252,7 +252,7 @@ As a loose rule of thumb, slippy maps are a good choice to the extent that:
 
 In order to use geodata to make a slippy map, you are really making two maps:
 
-1. *Background tiles* - You have to feed a set of data about where land is, where roads are, where points of interest are, etc. into a piece of software and have it generate images based on that.  You can skip this step if you are content with one of the other tilesets already out there (see below).
+1. *Background tiles* - You have to feed a set of data about where land is, where roads are, where points of interest are, etc. into a piece of software and have it generate images based on that.  You can skip this step if you are content with an existing set of tiles (see below).
 2. *Other content* - Once you have tiles, you can use geodata to add things on top like markers or highlighted lines.
 
 One of the best resources for making your own slippy map is Leaflet.  This library will do most of the dirty work of a slippy map and let you focus on customizing it.  You'll have to write a little bit of JavaScript, but probably a lot less than you think:   
@@ -317,7 +317,7 @@ The syntax is a little off-putting but it's not really any different from a poly
 
     <path id="Aruba" d="M493.4952430197009,554.3097009349817 L493.6271899111516,554.5053144486982 L493.7591368026024,554.5053144486982 L493.7591368026024,554.6357015002002 L493.8910836940532,554.7660710469861 L493.8910836940532,554.8964231416435 L493.7591368026024,554.8964231416435 L493.6271899111516,554.8964231416435 L493.6271899111516,554.8312492725454 L493.7591368026024,554.8312492725454 L493.7591368026024,554.7660710469861 L493.6271899111516,554.7008884583952 L493.36329612825017,554.5053144486982 L493.23134923679936,554.5053144486982 L493.23134923679936,554.4401143422353 L493.23134923679936,554.3749098398575 L493.23134923679936,554.3097009349817 L493.23134923679936,554.2444876210226 L493.23134923679936,554.1792698913926 L493.23134923679936,554.1140477395024 L493.36329612825017,554.2444876210226 Z" />
 
-You'll notice that these numbers are way outside the range of a lat/lng.  That's because they aren't lat/lngs.  They are pixel values for a drawing space of a particular size.  To go from lat/lng to pixels, you need to use what's called a map projection, a method for turning lat/lngs into a 2-D drawing.  When you make a slippy map, you will generally be automatically using what's called the Web Mercator projection, but there are lots of others and you'll need to pick one when making an SVG/Canvas map.  This is a bit beyond the scope of this primer, but you can read about the [https://github.com/mbostock/d3/wiki/Geo-Projections](built-in d3 map projections). 
+You'll notice that these numbers are way outside the range of a lat/lng.  That's because they aren't lat/lngs.  They are pixel values for a drawing space of a particular size.  To go from lat/lng to pixels, you need to use what's called a map projection, a method for turning lat/lngs into a 2-D drawing.  When you make a slippy map, you will generally be automatically using what's called the Web Mercator projection, but there are lots of others and you'll need to pick one when making an SVG/Canvas map.  This is a bit beyond the scope of this primer, but you can read about the [built-in d3 map projections](https://github.com/mbostock/d3/wiki/Geo-Projections). 
 
 SVG/Canvas maps are great because:
 
@@ -330,12 +330,12 @@ SVG/Canvas maps are not great because:
 1. They have **browser compatibility issues**.  IE8 doesn't support them.  (You can add support for IE7 and IE8 with certain libraries)
 2. Because your data is lat/lngs and the output is pixels, you **need to deal with map projections** to translate it before you draw.
 3. **Performance becomes an issue** as they get more complex.
-4. Implementing them generally requires a reasonably **high level of comfort with JavaScript**.
+4. Implementing them often requires a reasonably **high level of comfort with JavaScript**.
 5. **Users won't necessarily know what to do**.  You will have to quickly teach impatient users how your special new map works to the extent that it deviates from what they're used to.
 
 #### How do I make one? ####
 
-By far the most popular method for dynamically-drawn maps is d3, a fantastic but sometimes mind-bending JavaScript library:  
+By far the most popular method for dynamically-drawn maps is d3, a fantastic but sometimes mind-bending JavaScript library that is good for many things, of which maps are just one:  
 http://d3js.org/
 
 There are lots of d3 mapping examples and tutorials, but they probably won't make sense without a healthy amount of JavaScript under your belt:  
@@ -363,3 +363,9 @@ http://cartodb.com
 
 **BatchGeo**  
 http://batchgeo.com/
+
+## Questions/Comments/Suggestions ##
+Noah Veltman  
+Web: http://noahveltman.com  
+Twitter: [@veltman](http://twitter.com/veltman)  
+Email: [noah@noahveltman.com](mailto:noah@noahveltman.com)  
