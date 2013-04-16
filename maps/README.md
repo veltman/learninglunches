@@ -17,7 +17,7 @@ Most geodata you encounter is based on latitude/longitude coordinates on Earthâ€
 
 Latitude ranges from -90 (the South Pole) to 90 (the North Pole), with 0 being the equator.
 
-Longitude ranges from -180 (halfway around the world going west from the Prime Meridian) to 180 (halfway around the world going east from the Prime Meridian), with 0 being the prime meridian.  Yes, that means -180 and 180 are the same.
+Longitude ranges from -180 (halfway around the world going west from the prime meridian) to 180 (halfway around the world going east from the prime meridian), with 0 being the prime meridian.  Yes, that means -180 and 180 are the same.
 
 ![Latitude/Longitude](https://raw.github.com/veltman/learninglunches/master/maps/images/latlng.png)
 
