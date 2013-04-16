@@ -239,7 +239,7 @@ Slippy maps are not great because:
 1. Generating your own tiles can be a complicated task, requiring data, styling, and some technical savvy.
 2. Even if you reuse tiles from an old map, or borrow someone else's tiles, you **sacrifice fine visual control.**
 3. Image-based tiles are **not well-suited for making things dynamic**.
-4. You are usually **confined to the standard Web Mercator map projection** and zooming behavior (see appendix).
+4. You are usually **confined to the standard Web Mercator map projection** and zooming behavior (see the Bonus Level below).
 
 As a loose rule of thumb, slippy maps are a good choice to the extent that:
 
@@ -250,7 +250,10 @@ As a loose rule of thumb, slippy maps are a good choice to the extent that:
 
 #### How do I make one? ####
 
-In order to use geodata to make a slippy map, you are really making two maps.  First, you need to use your data to make tiles for the background.  You have to feed a set of data about where land is, where roads are, where points of interest are, into a piece of software and have it generate images based on that.  You can skip this step if you are content with one of the other tilesets already out there (see below).  Then, you need to use the geodata again to add things on top like markers or highlighted lines.
+In order to use geodata to make a slippy map, you are really making two maps:
+
+1. *Background tiles* - You have to feed a set of data about where land is, where roads are, where points of interest are, into a piece of software and have it generate images based on that.  You can skip this step if you are content with one of the other tilesets already out there (see below).
+2. *Other content* - Once you have tiles, you can use geodata to add things on top like markers or highlighted lines.
 
 One of the best resources for making your own slippy map is Leaflet.  This library will do most of the dirty work of a slippy map and let you focus on customizing it.  You'll have to write a little bit of JavaScript, but probably a lot less than you think:   
 http://leafletjs.com/
@@ -269,6 +272,10 @@ Here is how we might draw Colorado in Leaflet:
 Leaflet also speaks GeoJSON, so if we had a GeoJSON file with these coordinates we could feed it in directly:
 
     L.geoJson(states).addTo(map);
+
+You can use any tiles you want in Leaflet, including Google Maps.
+
+Another option is to use a popular maps service API, like Google Maps.  In most cases you will still need to use JavaScript to make something detailed, but tools like Google Fusion Tables will allow you to make certain types of maps without writing any code.
 
 **Tiles**
 
