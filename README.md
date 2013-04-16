@@ -7,13 +7,15 @@ The goal of these lunches is NOT to give tutorials on how to code or how to make
 
 The goal is to bridge the **context gap**, to demystify technical topics that come up often in newsroom developmment.  By having a high-level but concrete discussion of these different technologies, my hope is to foster more productive collaboration among developers, journalists, and designers.  Reports and designers with an idea will be able to better qualify that idea and evaluate different approaches when they have a basic understanding of the technical context and tradeoffs.  Armed with that context, assessing "How do we make this?  How long will it take?  How might we need to revise the original idea to accomodate technical tradeoffs?" becomes a more productive two-way conversation.
 
-To that end, these materials will involve as little actual code as possible.  For those who do want to go deeper and start learning the nuts and bolts on their own time, I try to provide resources to point them in the right direction.  Because these materials are for actual in-person lunch talks, sometimes they will be missing a little bit of "you had to be there," but I'm writing them with the intent that they can be helpful on their own.
+To that end, these materials will involve as little actual code as possible.  For those who do want to go deeper and start learning the nuts and bolts on their own time, I try to provide resources to point them in the right direction.
 
-## Current Topics ##
-* [SQL: The Prequel (Databases vs. Excel)](tree/master/databases)
-* [Making Maps for the Web](tree/master/maps)
+Because these materials are for actual in-person lunch talks, sometimes they will be missing a little bit of "you had to be there," but I'm writing them with the intent that they can be helpful on their own.
 
-## Future Topics ##
+### Current Topics ###
+* [SQL: The Prequel (Databases vs. Excel)](/veltman/learninglunches/tree/master/databases)
+* [Making Maps for the Web](/veltman/learninglunches/tree/master/maps)
+
+### Future Topics ###
 * How a Web Server Works
 * Intro to Web APIs
 * Scraping
@@ -22,9 +24,9 @@ To that end, these materials will involve as little actual code as possible.  Fo
 * [Your topic here] - have ideas?  let me know!
 
 ## Questions/Comments/Suggestions ##
-Noah Veltman
-Web: http://noahveltman.com
-Twitter: [@veltman](http://twitter.com/veltman)
-Email: [noah@noahveltman.com](mailto:noah@noahveltman.com)
+Noah Veltman  
+Web: http://noahveltman.com  
+Twitter: [@veltman](http://twitter.com/veltman)  
+Email: [noah@noahveltman.com](mailto:noah@noahveltman.com)  
 
 
