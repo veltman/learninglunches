@@ -9,18 +9,21 @@ The goal is to bridge the **context gap**, to demystify technical topics that co
 
 To that end, these materials will involve as little actual code as possible.  For those who do want to go deeper and start learning the nuts and bolts on their own time, I try to provide resources to point them in the right direction.
 
-Because these materials are for actual in-person lunch talks, sometimes they will be missing a little bit of "you had to be there," but I'm writing them with the intent that they can be helpful on their own.
+Because these materials are for actual in-person lunch talks, sometimes they will be missing a little bit of "you had to be there," but I'm writing them with the hope that they can be helpful on their own.
 
 ### Current Topics ###
 * [SQL: The Prequel (Databases vs. Excel)](databases/)
 * [Making Maps for the Web](maps/)
 
 ### Future Topics ###
-* How a Web Server Works
-* Intro to Web APIs
+* How a web server works
+* Intro to web APIs
 * Scraping
-* Making Charts Quickly
-* JavaScript: What Can It Do and Not Do?
+* Making charts
+* JavaScript: what can it do and not do?
+* CSS layout and responsive design
+* Maps case study: making the same map three different ways from start to finish
+* Cleaning and checking your data
 * [Your topic here] - have ideas?  let me know!
 
 ## Questions/Comments/Suggestions ##
