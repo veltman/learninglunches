@@ -71,11 +71,11 @@ If you're using an API to feed current data into an app instead, you're still us
 Potential semantic quibble: sometimes an app isn't directly accessing a database to fetch information.  Sometimes it's accessing cached files instead, but those cached files are generated automatically based on what's in the database.  Tomato, Tomahto.
 
 ## So when should I use a database instead of Excel? ##
-Excel and databases are good for very different things.  Neither is per se good or bad.  A rule of thumb: you should strongly consider using a database for a project to the extent that the following are true:
-You have a lot of data.
-Your data is messy or complex.
-You want to power something else with your data.
-Other people need to work with the same data.
+Excel and databases are good for very different things.  Neither is per se good or bad.  A rule of thumb: you should strongly consider using a database for a project to the extent that the following are true:  
+* You have a lot of data.
+* Your data is messy or complex.
+* You want to power something else with your data.
+* Other people need to work with the same data.
 
 ## OK, I'm intrigued.  How do I get started? ##
 Because databases have a learning curve, it makes sense not to dive in too deep right away.  Start off using it only in cases where the advantage is especially strong and your needs are pretty simple.  As your comfort level increases, you'll increasingly look towards databases to get what you want faster.
