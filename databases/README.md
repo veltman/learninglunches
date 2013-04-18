@@ -102,7 +102,7 @@ Much of the power of relational databases comes from SQL, a very flexible langua
 
 The basic building blocks of SQL are four verbs: `SELECT` (look up something), `UPDATE` (change some existing rows), `INSERT` (add some new rows), `DELETE` (delete some rows).  There are many other verbs but you will use these the most, especially `SELECT`.
 
-Let's imagine a table called athletes of Olympic athletes with six columns:
+Let's imagine a table called `athletes` of Olympic athletes with six columns:
 
     name
     country
