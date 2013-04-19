@@ -175,7 +175,7 @@ The new hotness.  TopoJSON takes in a basic geodata format, like GeoJSON, and sp
 
 ### I’m not a cartographer.  Where do I get geodata I can actually use? ###
 
-There are lots of good sources for geodata online.  Here are a few:
+There are lots of good sources for geodata online.  Here are a few helpful sources:
 
 **Natural Earth**  
 http://www.naturalearthdata.com/  
@@ -209,6 +209,8 @@ Not a source of data, but a handy converter if you need to convert between a sha
 http://www.qgis.org/ (free)  
 http://www.esri.com/software/arcgis (very not free)  
 You'll want to start getting the hang of desktop GIS software, especially if you'll be working with shapefiles.  Quantum GIS is free and excellent.  Arc GIS is also very powerful but very expensive.  These are not a data source, per se, but an important method of whipping imperfect data into shape before mapping it.
+
+*A note of caution: be distrustful of any geographic data you find, especially if it's complex or you'll be combining data from multiple sources.  Geographic data is not immune to the variability of accuracy on the internet.  You will find no shortage of misshapen shapefiles, mislabeled locations, and missing puzzle pieces.*
 
 ---
 
