@@ -40,7 +40,7 @@ URLs are a standard format for finding the right server and then asking it for s
 
 In `http://wikipedia.org/wiki/List_of_fictional_ducks`,
 
-`wikipedia.org` is the **domain name**.
+`wikipedia.org` is the **domain name**.  
 `/wiki/List_of_fictional_ducks` is the **path**.
 
 The domain name is what you look up in the DNS yellow pages to figure out who to call with your request.  Don't worry about the details of how DNS works, as long as you understand that you look up a domain name and it tells you the actual digital address (IP address) for the server that handles requests for that domain name.
@@ -206,6 +206,10 @@ Using AJAX instead of multiple pageviews is an elegant solution to creating a we
 
 * **Different page states don't have their own URLs**.  URLs are a great feature of the web.  By giving pages a consistent locator, they become easy to share, bookmark, and revisit.  They make a browser history possible, so that you can navigate with the back and forward buttons.  The more you use AJAX to play with the state of a page without changing the URL, the more you break this.  The refresh and back buttons will not behave the way they're expected to.  If you load a URL that then changes a bunch of things dynamically using AJAX, when you share that URL later, you're sharing something different than what you're looking at.  The next person will see the initial state of the page instead.  There are some workarounds for these problems, but they aren't pretty (the internet: it's workarounds all the way down!).
 * It introduces additional **design complexity**.  Because you have these asynchronous, invisible requests happening, you have to make sure to design the page to work smoothly no matter what the status.  Those requests could fail, or your user could lose their internet connection while looking at the page on their phone.  This means lots of fallbacks, loading indicators, and that sort of thing.
+
+### So what actually happens on the "server side" when a request is received? ###
+
+[Fill this in later]
 
 ### GET vs. POST ###
 
