@@ -11,18 +11,18 @@ A **server** gets its name from the fact that it lives to serve.  It is a comput
 
 In the old days, a server was usually a big physical computer sitting in a room somewhere.  These days, almost anything can be a server.  A wristwatch can be a server.  Several computers can team up to act as a single server, like three people under different parts of the dragon float in a parade. A single computer can act as lots of servers, like a single PO Box that represents hundreds of Cayman Island corporations.
 
-Ultimately a server is just any computer or part of a computer that can listen for **requests** from a client and do something with them.  Usually a server sends back a **response** once it's finished with the request.  If the request is "send me back some information," the response would include that information, but sometimes the response is just a confirmation message or, if it didn't like your tone, a rejection message.
+A typical server is any computer or part of a computer that can listen for **requests** from a client and do something with them.  Usually the server sends back a **response** once it's finished with the request.  If the request is "send me back some information," the response would include that information, but sometimes the response is just a confirmation message or, if it didn't like your tone, a rejection message.
 
 When you request something from the server, you're the **client**.  Keep in mind that "server" and "client" are just *roles* for a particular interaction, they can change.  When server A asks server B for a file, server A has become the client.
 
 If a ship captain calls up to the lookout in the crow's nest asking if there any icebergs ahead, the captain is a client and the lookout is a server.  The lookout takes in a **request**, does something with it (in this case, looks through his binoculars), and sends back a **response** ("all clear!" or "iceberg, dead ahead!").
 
-A **web server** is a particular flavor of server that listens for certain types of requests and provides certain types of responses.  It's a system for easily looking up documents from other computers that are willing to give them to you.  This is where that annoying `http://` at the start of every web address comes in.  HTTP stands for **H**yper**t**ext **T**ransfer **P**rotocol.  There are lots of other protocols, but for our purposes all we care about is HTTP.
+A web server is a particular flavor of server that listens for certain types of requests and provides certain types of responses.  It's a system for easily looking up documents from other computers that are willing to give them to you.  This is where that annoying `http://` at the start of every web address comes in.  HTTP stands for **H**yper**t**ext **T**ransfer **P**rotocol.  There are lots of other protocols, but for our purposes all we care about is HTTP.
 
 When interacting with a web server, the actual "client" is usually your web browser, and you're just guiding it.  If you hear "client" in the context of the web, think browser.  A web browser plays two main roles:
 
-1. A rendering engine that takes raw HTML and JavaScript code and makes them into pretty, clickable webpages for your viewing pleasure
-2. A terminal that formats your URLs and other interactions into formal HTTP requests that a server will understand, like a telegraph operator in the Wild West (more on this soon).
+1. A rendering engine that takes raw HTML and JavaScript code and makes them into pretty, clickable webpages for your viewing pleasure.
+2. A translator that formats your URLs and other interactions into formal HTTP requests that a server will understand (more on this soon).
 
 ## Anatomy of a pageview ##
 
@@ -59,7 +59,7 @@ That's it!  That's all your browser (the client) needs to send to the server to 
 
 Of course, in the noblest traditions of the web, we like to take beautifully simple technologies and complicate them to meet new needs until we look down and we have an unrecognizable Frankentechnology.  In addition to this request, your browser will send any number of **headers** along with the request.  Headers are basic name-value pairs that specify extra options or restrictions for an HTTP transaction.  Here are some examples of common headers:
 
-* `Host: wikipedia.org` means "this request is for wikipedia.org."  This is necessary in the modern era because a given server might handle incoming requests for lots of different domain names.  It needs to know that you want `wikipedia.org/wiki/List_of_fictional_ducks` and not `okcupid.com/wiki/List_of_fictional_ducks`.
+* `Host: wikipedia.org` means "this request is for wikipedia.org."  This is necessary in the modern era because a given server might handle incoming requests for lots of different domain names.  It needs to know that you want http://wikipedia.org/wiki/List_of_fictional_ducks and not http://okcupid.com/wiki/List_of_fictional_ducks.
 * `Referer: http://www.google.com/search?query=darkwing` means "I got here from a Google search for 'darkwing'."  The `Referer` header helps a server understand where its traffic is coming from.  Sound like something a newsroom might care about?
 * `User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0` means "I'm using the Firefox 20.0 browser on Windows."  This helps you understand what browsers your visitors are using, and, if you choose to, serve them different content based on their browsers.  When you get redirected to an http://m.site.com mobile site on your phone, it's usually because the server detected that your `User-Agent` header was describing a mobile browser and rerouted you.
 
@@ -79,7 +79,7 @@ http://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Requests
 
 OK, so your browser (the client) has sent a nicely-formatted request to the wikipedia.org server, and it has also used headers to identify what browser it is, how it got to this page, and maybe some other things like which languages it prefers.
 
-The server takes in that request, and then it can do whatever it wants.  It is free to reject the request, or ignore it completely.  More likely, if it's a friendly web server, it will take that request, go into the back room, do whatever it needs to do to satisfy your request, and then you send you back a response.
+The server takes in that request, and then it can do whatever it wants.  It is free to reject the request, or ignore it completely.  More likely, if it's a friendly web server, it will take that request, go into the back room, do whatever it needs to do to satisfy your request, and then send back a response.
 
 A response looks quite similar to a request, but instead of starting by asking for a path, it starts with a **status code** that tells you what kind of response you're getting:
 
@@ -99,8 +99,8 @@ http://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 HTTP responses have optional extra headers, just like requests do.  Examples include:
 
 * `Content-Type: text/html` means "This is an HTML document."  When your browser knows whether to display something as a web page or download it as a different kind of file, this is usually why.  For example, `Content-Type: application/pdf` would tell it to open it as a PDF file instead.
-* `Last-Modified: Tue, 16 Apr 2013 12:20:41 GMT` means "This file hasn't changed since April 16, 2013, in case you want to use a cached version instead."
-* `Cache-Control: no-cache` means "Hey, don't cache this file.  If they ask for the same URL later, come get a new version.  Seriously, don't cache it.  No, really, don't.  Please?"  Dealing with caching is hard.  We'll talk more about it later.
+* `Last-Modified: Mon, 15 Apr 2013 12:20:41 GMT` means "This file hasn't changed since April 15, 2013, in case you want to use a cached version instead."
+* `Cache-Control: no-cache` means "Hey, don't cache this file.  If they ask for the same URL later, come get a new version.  Seriously, don't cache it.  No, really, don't.  Please?"  (dealing with caching is hard)
 
 Wikipedia has a longer list of HTTP response headers:  
 http://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Responses
@@ -224,6 +224,14 @@ This is where `POST` comes in.  `POST` is another method for requesting a URL an
 * It's OK for the same data to be submitted repeatedly.
 * The data isn't sensitive.
 
+Sending variables via `GET` and `POST` is how a lot of popular web APIs work.  They give you some URL endpoints, like:
+
+    https://api.twitter.com/1.1/statuses/user_timeline.json
+
+And let you supply your own variables to get the information you want:
+
+    https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=veltman
+
 These two methods are the most common, but there are lots more:  
 http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods
 
@@ -239,9 +247,18 @@ http://www.w3.org/Provider/Style/URI.html
 
 ### Caching ###
 
-Caching is important, because most content on the web doesn't change that often.  Loading the same thing over and over, especially something like a large image, is bad news for everyone.  It uses server resources, it uses your bandwidth and/or data allowance, and it makes everything load slowly.  Most modern browsers cache files over time and, when you make a request to a URL you've visited before, decide whether you need to download it over again or you can just use the cached version instead.
+Most content on the web doesn't change that often.  Loading the same thing over and over, especially something like a large image, is bad news for everyone.  It uses server resources, it uses your bandwidth and/or data allowance, and it makes everything load slowly.  Most modern browsers cache files over time and, when you make a request to a URL you've visited before, decide whether you need to download it over again or you can just use the cached version instead.
 
 A server can help avoid under- or overcaching by sending the right headers with its responses.  Headers like `Cache-Control`, `Expires`, and `Last-Modified`, specify whether to cache a file, how long to consider this version current, and when the last time it was changed, respectively.
+
+## Taking the red pill ##
+
+If you want to take a look under the hood of your own browsing to understand just what real-world HTTP transactions look like, download a web proxy like Fiddler:  
+http://fiddler2.com/
+
+It's free, and if you run it while you browse the web, it will show you what requests your browser is actually sending, and what responses it's actually receiving.  Poke around and see what you find!
+
+![Fiddler example](https://raw.github.com/veltman/learninglunches/master/webservers/images/fiddler.png)
 
 ---
 
