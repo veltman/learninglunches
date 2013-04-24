@@ -177,7 +177,7 @@ Either of these strategies reduces the realtime strain on a server, since users 
 If you want to take a look under the hood of your own browsing to understand just what real-world HTTP transactions look like, download a web proxy like Fiddler:  
 http://fiddler2.com/
 
-It's free, and if you run it while you browse the web, it will show you what requests your browser is actually sending, and what responses it's actually receiving.  The format of these requests is a little stiff and formal, but it's all plain text.  It's like an old-timey telegram (`SEND HISTORY OF CLAN MCDUCK. STOP.`) Poke around and see what you find!
+It's free, and if you run it while you browse the web, it will show you what requests your browser is actually sending, and what responses it's actually receiving.  The format of these requests is a little stiff and formal, but it's all plain text.  It's like an old-timey telegram (`SEND HISTORY OF CLAN MCDUCK. STOP.`). Poke around and see what you find!
 
 ![Fiddler example](https://raw.github.com/veltman/learninglunches/master/webservers/images/fiddler.png)
 
