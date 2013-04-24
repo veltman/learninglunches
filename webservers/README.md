@@ -1,4 +1,4 @@
-# Web server, in several bad analogies #
+# How a web server works, in several bad analogies #
 
 Whenever you visit a webpage, you're interacting with a **web server**.  That interaction has a particular structure, called an HTTP transaction (that's where the `http://` at the beginning of a URL comes in), and it looks something like this:
 
@@ -8,7 +8,7 @@ The client (that's you, or, if you want to be precise, your web browser) sends a
 
 `http://wikipedia.org/wiki/List_of_fictional_ducks`
 
-You're sending a request to wikipedia.org, saying "Hey, can you send me whatever document is located at `/wiki/List_of_fictional_ducks`?"
+You're sending a request to `wikipedia.org`, saying "Hey, can you send me whatever document is located at `/wiki/List_of_fictional_ducks`?"
 
 Your browser will probably attach some extra **headers** along with its request saying things like "I'm using Firefox," or "Please send me stuff in English."  These headers are voluntary and controlled by the client.  Your browser includes them because they will usually help the server fulfill your request the way you like.  For example, if you're on a mobile device, and you send the header "Hey!  I'm a mobile browser!", the server might redirect you to http://m.wikipedia.org/ for a mobile-optimized layout.  You've probably been shunted off to a crappy, unzoomable mobile site when you'd rather get the desktop version, so you know that this well-meaning process can go wrong.  Headers can be used for good or evil.
 
