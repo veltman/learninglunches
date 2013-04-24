@@ -1,4 +1,4 @@
-# How a web server works, in several bad analogies #
+# How the web works, in several bad analogies #
 
 Whenever you visit a webpage, you're interacting with a **web server**.  That interaction has a particular structure, called an HTTP transaction (that's where the `http://` at the beginning of a URL comes in), and it looks something like this:
 
@@ -109,17 +109,17 @@ If you are using a webpage and things are happening that seem to involve a serve
 
 AJAX is nice because it allows for a desktop app-like experience instead of the natural document-hopping experience of the web.  It's also nice because, if a given page involves large files for certain part, you don't want to make the user wait for all of that content before the user sees anything (that would be _synchronous_).
 
-Let's say you have a news article, and in the middle of the article you have an interactive graphic that requires the download of a 5 MB data file.  In the pre-AJAX world, you'd have to include that as part of the initial download of the page.  This makes the whole thing slow to load, and causes problems if, for example, the user is on a phone and loses their data connection partway through.  In the AJAX world, you can load the rest of the article so a user can start reading it, and in the background, you can start downloading the data (_asynchronously_), displaying a loading animation in place of the graphic until the data is done downloading.
+Let's say you have a news article, and in the middle of the article you have an interactive graphic that requires the download of a 5 MB data file.  In the pre-AJAX world, you'd have to include that as part of the initial download of the page.  This makes the whole thing slow to load, and causes problems if, for example, the user is on a phone and loses their data connection partway through.  In the AJAX world, you can load the rest of the article so a user can start reading it, and in the background, you can start downloading the data (_asynchronously_), displaying a loading animation in place of the graphic until the data is done downloading.  As AJAX becomes more and more common, we increasingly live in an era of modular webpages full of loading animations.
 
-AJAX also has some downsides:
+AJAX has some downsides:
 
-* **Different page states don't have their own URLs**.  As stated above, URLs are a great feature of the web.  The more you use AJAX to play with the state of a page without changing the URL, the more you break this.  The refresh and back buttons will not behave the way they're expected to.  If you load a URL that then changes a bunch of things dynamically using AJAX, when you share that URL later, you're sharing something different than what you're looking at.  The next person will see the initial state of the page instead.  There are some workarounds for these problems, but they aren't pretty (the internet: it's workarounds all the way down!).
+* **Different page states don't have their own URLs**.  As stated above, URLs are a great feature of the web.  The more you use AJAX to play with the state of a page without changing the URL, the more you break this.  The refresh and back buttons will not behave the way they're expected to.  If you load a URL that then changes a bunch of things dynamically using AJAX, when you share that URL later, you're sharing something different than what you're looking at.  The next person will see the initial state of the page instead.  Sometimes this is desirable (you don't want a URL that goes straight to a confirmation message after someone has submitted an order), but sometime's it isn't.  There are some workarounds for these problems, but they aren't pretty (the internet: it's workarounds all the way down!).  Think carefully about when you want your URLs to change and when you don't.
 * It introduces additional **design complexity**.  Because you have these asynchronous, invisible requests happening, you have to make sure to design the page to work smoothly no matter what the status.  Those requests could fail, or your user could lose their internet connection while looking at the page on their phone.  This means lots of fallbacks, loading indicators, and that sort of thing.
 * It can affect **crawlability of your content**.  Search engine web crawlers have different levels of ability to crawl content delivered via AJAX, depending on the details.  For sites that care about inbound traffic from search engine (that would be... all of them?), this can be a consideration in whether/how to use AJAX.
 
 ---
 
-## Double HTTP, what does it mean? ##
+## Some implications ##
 
 Now that we've gone over the basic bones of pageviews, we can talk about some of the implications for how to get content to users the way you want.
 
@@ -135,44 +135,37 @@ Often when you think you need browser detection, what you really need is feature
 
 Either way, browser and feature detection is a messy process.  The `User-Agent` information is not precisely standardized, and new browsers, devices, and versions are constantly popping up.  New features are also popping up all the time, and different browsers often come up vendor-specific features.  Support varies widely, especially for newer or more obscure features.  Knowing what browsers your site traffic usually comes from (see above) is a key component in making decisions about how much time to invest in cutting-edge features or fallbacks for people on older browsers.
 
+For a journey into the heart of browser support darkness, check out: http://caniuse.com/
+
 One JavaScript library that can be used to detect support of certain features is Modernizr: http://modernizr.com/
 
 ### Responsive design ###
 
 One particular "feature" that matters a lot for how your webpage looks is simple: how big is the screen (a.k.a. the **viewport**)?
 
-A lot of sites have traditionally gone with a "fixed width" layout for desktop/laptop browsers, where they pick a reasonable width for the content that will fit on most screens.  If you're on a smaller screen, or you shrink the window, tough luck.  If you're on a bigger screen, a lot of that real estate is wasted.
+A lot of sites have traditionally gone with a "fixed width" layout, where they pick a reasonable width for the content that will fit on most desktop/laptop screens, and then they paint everything in that box with total precision.  If you're on a smaller screen, or you shrink the window, tough luck, the content doesn't fit on your screen.  If you're on a bigger screen, a lot of the real estate is wasted.
 
-In the early days of smartphones, a lot of sites starting creating mobile versions of their desktop sites, slimmed down versions that were meant to be viewed on a small screen without a mouse.  They would use server-side browser detection and create a different document to send back, depending on the browser.  This approach allows you to optimize precisely for any given device, but it's also brittle.  You're inevitably playing catch-up.  New devices and new operating systems are coming out all the time, and just because someone downloads your content on one device doesn't mean that's how they're viewing it.
+When smart phones came along, a lot of sites starting creating mobile versions of their desktop sites, slimmed down versions that were meant to be viewed on a small screen without a mouse.  They would use server-side browser detection and create a different document to send back, depending on the browser.  This approach allows you to optimize precisely for any given device, but it's also brittle.  You're inevitably playing catch-up.  New devices and new operating systems are coming out all the time, and just because someone downloads your content on one device doesn't mean that's how they're viewing it.  It also handcuffs your users.  You've probably been shunted off to a mobile site before and found that the mobile-"optimized" site is missing the one thing you came for.
 
-A strategy that's gaining ground these days is **responsive design**.  This school of thought says that trying to control every little pixel on every screen of every device, and splitting our site into lots of special versions, is a losing battle, especially as the universe of web-enabled devices gets ever more diverse.  We should instead create something fluid that adapts to whatever screen it's on (this is how the web used to work until we broke it with our cleverness).
+A philosophy that's gaining ground these days is **responsive design**.  This school of thought says that trying to control every little pixel on every screen of every device, and splitting our site into lots of special versions, is a losing battle, especially as the universe of web-enabled devices gets ever more diverse.  We should instead create something fluid that adapts to whatever screen it's on (this is how the web used to work until we broke it with our cleverness).
 
-For example, you might have a gallery of thumbnail images that are each 100 pixels wide, but instead of just staking out 800 pixels of width and displaying them 8 across, you can instead tell the browser to just display as many as it can per row.  A narrow browser will display more rows, fewer per row, instead of making you scroll horizontally (boo, horizontal scrolling!).
+For example, you might have a gallery of thumbnail images that are each 100 pixels wide, but instead of just staking out 800 pixels of width and displaying them 8 across, you can instead tell the browser to just display as many as it can per row.  A narrow browser will display more rows, fewer per row, instead of making you scroll horizontally (boo, horizontal scrolling!), and you don't have to create a whole extra site for mobile.
 
-This is an elegant approach with a lot of advantages - you can have a single set of HTML and styling for your page, and you can ensure that the experience doesn't break down just because someone uses a device you didn't expect (including, maybe, a device that didn't exist when you created the site).  But figuring out how to make everything flow the way you want for any screen size can be a complex puzzle to solve.  Painting is hard when you don't know the size of the canvas.  This is both a downside and an upside, insofar as it forces you to think critically about what matters on your site and what doesn't.  A related concept is **progressive enhancement**, that you should make sure that the most basic version of a page works, and then progressively add content and functionality for browsers than support it.
+Responsive design is an elegant approach with a lot of advantages - you can have a single set of HTML and styling for your page, and you can ensure that the experience doesn't break down just because someone uses a device you didn't expect (including, maybe, a device that didn't exist when you created the site).  But figuring out how to make everything flow the way you want for any screen size can be a complex puzzle to solve.  Painting is hard when you don't know the size of the canvas.  This is both a downside and an upside, insofar as it forces you to think critically about what matters on your site and what doesn't.
 
-Responsive design and server-side customization are not mutually exclusive.  You can always have a responsive site template, but customize particular components by device on the server side before sending the response to the browser.  Your mileage may vary.
+Responsive design is not a panacea.  In some cases visitors on tiny screens want drastically different things than visitors on big screens, and trying to treate the layout as a fluid continuum doesn't make sense.  Responsiveness is best suited for situations where users on different devices are using your site in broadly similar ways, like, say, reading news articles.  As always, the lesson is: know your users.
 
+A concept related to responsive design is **progressive enhancement**, that you should make sure that the most basic version of a page works, and then progressively add content and functionality for browsers than support it.
 
 ### Browser caching ###
 
 Most content on the web doesn't change that often.  Loading the same thing over and over, especially something like a large image, is bad news for everyone.  It uses server resources, it uses bandwidth and/or data allowance, and it makes everything load slowly.  Most modern browsers cache files over time and, when you make a request to a URL you've visited before, decide whether you need to download it over again or you can just use the cached version instead.
 
-Caching is tricky.  A server can send HTTP headers like `Cache-Control`, `Expires`, and `Last-Modified` with a response, which specify whether to cache a document, how long to consider this version current, and when the last time it was changed, respectively.  But this doesn't always work.  Some browsers don't handle those headers well, especially older ones.  Some servers don't supply the right headers.  Some proxy servers, middlemen for web traffic, strip them out.  Overcaching is bad because a user sees the wrong content - yesterday's news instead of today's news - and it can sometimes screw up your analytics, not giving you credit for all your pageviews.  Undercaching is bad because it's a waste of resources.
-
-One technique to prevent overcaching is called "cache busting," and it consists of subtly playing with URLs to trick a browser into thinking every request is for a document you haven't seen before.
-
-`http://www.example.com/homepage.html`
-
-becomes:
-
-`http://www.example.com/homepage.html?timestamp=981234`
-
-The server will ignore that timestamp, but your browser will think you're seeing something new and exciting.
+Caching is tricky.  A server can send HTTP headers like `Cache-Control`, `Expires`, and `Last-Modified` with a response, which specify whether to cache a document, how long to consider this version current, and when the last time it was changed, respectively.  But this doesn't always work.  Some browsers don't handle those headers well, especially older ones.  Some servers don't supply the right headers.  Some proxy servers, middlemen for web traffic, strip them out.  Overcaching is bad because a user sees the wrong content - yesterday's news instead of today's news - and it can sometimes screw up your analytics.  Undercaching is bad because it's a waste of resources.
 
 ### Server side caching ###
 
-Remember the server side?  One approach some newsrooms use now is caching things on their own server instead.  In this scheme, instead of taking in each request, looking up a bunch of stuff in the database, and then assembling a custom response, the server can take a different approach, either:
+Remember the server side?  One approach some newsrooms use now is caching things on their own server.  In this scheme, instead of taking in each request, looking up a bunch of stuff in the database, and then assembling a custom response, the server can take a different approach, either:
 
 * cache every unique request the first time it receives it, so that every other person who asks for the same thing gets a pre-made document.
 * proactively figure out every possible request you might have to respond to, and then "bake" flat files so that they all point to pre-made documents.  If we go back to the kitchen analogy, this is like pre-making all the different orders you expect and then sticking them under the warming lamps so they're ready immediately.
