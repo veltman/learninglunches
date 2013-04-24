@@ -4,7 +4,7 @@ Whenever you visit a webpage, you're interacting with a **web server**.  That in
 
 ### The request ###
 
-The client (that's you, or, if you want to be precise, your web browser) sends a **request** to the server.  The request is usually pretty basic, asking to download a copy of a document the server has.  When you request:
+The **client** (that's you, or, if you want to be precise, your web browser) sends a **request** to the server.  The request is usually pretty basic, asking to download a copy of a document the server has.  When you request:
 
 `http://wikipedia.org/wiki/List_of_fictional_ducks`
 
