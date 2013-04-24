@@ -14,9 +14,9 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 ### Current Topics ###
 * [SQL: The Prequel (Databases vs. Excel)](databases/)
 * [Making Maps for the Web](maps/)
+* [How the web works, in several bad analogies](webservers/)
 
 ### Future Topics ###
-* How a web server works
 * Intro to web APIs
 * Scraping
 * Making charts
