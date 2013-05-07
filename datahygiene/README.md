@@ -32,7 +32,7 @@ Text data sucks.  Be careful about whitespace, capitalization, and character col
 
 Whether you’re using Excel, a relational database, or something else, make sure that your columns/fields are the type you want, and ALL of the data going in matches those types.  If you don’t, your data is going to get squeezed through a special decorative mold when you import it and all your candy cane integers will become snowflake text and you won’t even know it’s happening.  This is especially important if your data is going to pulled out the other side later to power some sort of cool app, where it’s going to go through the variable type wringer again.
 
-**Pop quiz:** which of the following things evaluate as `false` in whatever language your developers use?
+**Pop quiz:** which of the following things evaluate as `false` in whatever language your developers use?  
 `0, “0”, 0.0, “0.0”, [], {}, [{}], null, undefined`
 
 **Answer:** don’t let this question come up.
