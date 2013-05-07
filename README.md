@@ -15,6 +15,7 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 * [SQL: The Prequel (Databases vs. Excel)](databases/)
 * [Making Maps for the Web](maps/)
 * [How the web works, in several bad analogies](webservers/)
+* [Avoiding mistakes when cleaning your data](datahygiene/)
 
 ### Future Topics ###
 * Intro to web APIs
