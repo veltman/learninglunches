@@ -16,9 +16,9 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 * [Making Maps for the Web](maps/)
 * [How the web works, in several bad analogies](webservers/)
 * [Avoiding mistakes when cleaning your data](datahygiene/)
+* [Web APIs](apis/)
 
 ### Future Topics ###
-* Intro to web APIs
 * Scraping
 * Making charts
 * JavaScript: what can it do and not do?
