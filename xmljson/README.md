@@ -1,7 +1,9 @@
 
 # XML and JSON: the tale of the tape #
 
-Almost every popular web API returns data in one of two formats: XML or JSON.  These formats can be very confusing.  They look very different from how you are probably used to thinking of data.  **XML and JSON are not like a spreadsheet**.  They are both very flexible specifications for representing almost any kind of data.  Both involve *nested* elements with *properties*, so you can represent complex data with lots of levels.  For example, you can have a list of countries, and each country can have a list of cities, and and each city can have a list of neighborhoods.  Or think of a family tree, which can be represented easily enough in XML or JSON.  You want to track some information about each person (e.g. their date of birth), but also their relationship to everything else.  Every time you try to express complex nested relationships like these in a single two-dimensional table, an angel loses its wings.
+Almost every popular web API returns data in one of two formats: XML or JSON.  These formats can be very confusing.  They look very different from how you are probably used to thinking of data.  **XML and JSON are not like a spreadsheet**.  They are both very flexible specifications for representing almost any kind of data.  Both involve nesting, so you can represent complex data with lots of levels.
+
+For example, you can have a list of countries, and each country can have a list of cities, and and each city can have a list of neighborhoods.  Or think of a family tree, which can be represented easily enough in XML or JSON.  You want to track some information about each person (e.g. their date of birth), but also their relationship to everything else.  Every time you try to express complex nested relationships like these in a single two-dimensional table, an angel loses its wings.
 
 I'll talk briefly about the basic structure of XML and JSON, and then we'll look at some examples.
 
