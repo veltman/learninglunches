@@ -1,26 +1,24 @@
 # Web APIs for non-programmers #
 
-## What the &*!@ is an API? ##
+## What is an API? ##
 
 API stands for **A**pplication **P**rogramming **I**nterface.  Don't worry about the AP, just focus on the I.  **An API is an interface**.  You use interfaces all the time.  A computer operating system is an interface.  Buttons in an elevator are an interface.  A gas pedal in a car is an interface.
 
-An interface is a middleman, a translator, something that sits on top of a complicated system and simplifies certain tasks by taking your actions and filling in the details before passing them to the system underneath.  When you're driving and you press on the gas pedal or shift your transmission, the interface translates what you do with those basic controls into lots of complicated details about fuel injection rates and whirring metal parts.
-
-A web API is the same sort of thing.  It sits on top of a web service, like Twitter or YouTube, and simplifies certain tasks for you.  It translates your actions into the technical details for the computer system on the other end.
+An interface sits on top of a complicated system and simplifies certain tasks, a middleman that saves you from needing to know all the details of what's happening under the hood.  A web API is the same sort of thing.  It sits on top of a web service, like Twitter or YouTube, and simplifies certain tasks for you.  It translates your actions into the technical details for the computer system on the other end.
 
 ## What is a web API? ##
 
-There are lots of different flavors of web API.  One of the most common, and most accessible to non-programmers,is called a REST, or RESTful, API.  Don't worry about the acronym.  From now on, when I say "web API" I mean a REST API.  If you want to nitpick, there are other kinds of web API.  But why would you want to do that?
+There are lots of different flavors of web API.  One of the most common, and most accessible to non-programmers,is called a REST, or RESTful, API.  From now on, when I say "web API" I mean a REST API.  If you want to nitpick, there are other kinds of web API.  But why would you want to do that?
 
-**A web API is an interface with URLs as the controls.**  In that respect, the entire web is a sort of API.  You try to access a URL in your browser (also known as a **request**), and a web server somewhere makes a bunch of complicated decisions based on that and sends you back some content (also known as a **response**).  A standard web API is no different.
+**A web API is an interface with URLs as the controls.**  In that respect, the entire web is a sort of API.  You try to access a URL in your browser (also known as a **request**), and a web server somewhere makes a bunch of complicated decisions based on that and sends you back some content (also known as a **response**).  A standard web API works the same way.
 
-The key difference between an ordinary URL and a URL that's part of a web API is that an ordinary URL sends back something pretty designed to look good in your browser, **a web API URL sends back something ugly designed to be useful to a computer**.
+The key difference between an ordinary URL and a URL that's part of a web API is that an ordinary URL sends back something pretty designed to look good in your browser, whereas **a web API URL sends back something ugly designed to be useful to a computer**.
 
-When you request the URL `http://twitter.com/` in a browser you get back a nice-looking webpage with a bunch of colors and pictures and buttons.  It's designed for a human to look at and for a browser to draw on a screen.  But it sucks if what you want is to gather and analyzing data.  The structure of the underlying document is very confusing.  it's hard to extract the bits you care about, and it doesn't provide you information in bulk.
+When you request the URL `http://twitter.com/` in a browser you get back a nice-looking webpage with a bunch of colors and pictures and buttons.  It's designed for a human to look at and for a browser to draw on a screen.  But it sucks if what you want is to gather and analyzing data.  The structure of the underlying document is very confusing and inconsistent.  it's hard to extract the bits you care about, and it doesn't provide you information in bulk.
 
 When you request the web API URL `https://api.twitter.com/1.1/statuses/home_timeline.json` instead, you get back an ugly-looking chunk of plain text with no decorations.  It's designed for a computer to read.  It sucks if what you want is to look at some tweets while you drink your morning coffee, but it's great if you want to extract and analyze tweets and their metadata, especially if you want to extract a lot of them at one time.
 
-**Web APIs are a way to strip away all the extraneous visual interface that you don't care about and get at the data.**
+**Web APIs are a way to strip away all the extraneous visual interface that you don't care about and get at the data.**  In the same vein, you can often think of them as a limited shortcut into a web service's database.  Twitter won't just let you log in to their internal database and poke around (unless you work there), but they will give you an easier way to access it in certain limited ways using an API.
 
 ## Why would I want to use a web API? ##
 
@@ -46,7 +44,7 @@ Usually you'll find a set of documentation, sometimes called an API **specificat
 The Twitter API: https://dev.twitter.com/docs/api/1.1  
 The New York Times Best Sellers API: http://developer.nytimes.com/docs/best_sellers_api/
 
-These instruction manuals are very dense with information, but what they mainly describe is a list of URLs you can use to retrieve different kinds of data.  These URLs can called many things, like _resources_ or _methods_.  Using one of them is also sometimes called an _API request_ or _API call_.  A "request" is a good way to think about it, because that's exactly what you're doing.  You're going up to the friendly librarian at Twitter or YouTube or whatever other popular service, and asking them to give you some information.
+These instruction manuals are very dense with information, but what they mainly describe is a list of URLs you can use to retrieve data.  These URLs can called many things, like _resources_ or _methods_.  Using one of them is also sometimes called an _API request_ or _API call_.  A "request" is a good way to think about it, because that's exactly what you're doing.  You're going up to the friendly librarian at Twitter or YouTube or whatever other popular service, and asking them to give you some information.
 
 For each URL, you will usually find a page or a section explaining more details about how to use it.  Typically this consists of two things: **parameters** and the **response**.
 
@@ -57,11 +55,12 @@ Parameters are information you can supply as part of the URL in order to define 
     https://api.twitter.com/1.1/search/tweets.json
 
 but this doesn't tell Twitter anything about what you want to search for.  You have to add in parameters, like so:
-    `https://api.twitter.com/1.1/search/tweets.json?q=burritos`
+
+    https://api.twitter.com/1.1/search/tweets.json?q=burritos
     
 in order to specify that you are searching for 'burritos'.
 
-Parameters might also be called _variables_, because they vary - they are the parts of a URL that you change in order to change the details of the request.  Think of each web API resource/method/URL as a gadget, and each parameter as a specific knob on that gadget.
+Parameters might also be called _variables_, because they vary - they are the parts of a URL that you change in order to change what you're asking for.  Think of each web API resource/method/URL as a gadget, and each parameter as a specific knob on that gadget.
 
 For any given URL, some parameters might be required, some might be optional.  Let's go back to the Twitter search example:
 
@@ -280,7 +279,7 @@ Many APIs include limits on how many requests you can make per hour or per day i
 
 ## Disclaimer ##
 
-APIs are very useful for getting data on a one-off basis, especially if you can master XML and JSON, but be wary about building ongoing processes on them.  There is no guarantee that an API won't change.  APIs are discontinued all the time, and the old URLs stop working.  Or, certain URLs are discontinued or changed, making it harder to get data that used to be easy to get.  Or, the service starts charging a lot of money to use the API now that everyone relies on it.  Keep this in mind when thinking about how you want to use a particular API.
+APIs are very useful for getting data on a one-off basis, especially if you can master XML and JSON, but be wary about building ongoing processes on them.  There is no guarantee that an API won't change.  APIs or specific parts of them are discontinued all the time, making it harder to get data that used to be easy to get.  Or, the service starts charging a lot of money to use the API now that everyone relies on it.  Keep this in mind when thinking about how you want to use a particular API.
 
 ## Some popular free web APIs ##
 
