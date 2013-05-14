@@ -171,7 +171,7 @@ Two more examples:
 
 An array is used for expressing a flat list of things (like sibling elements in XML), and an object is used for expressing specific details about one thing (like element attributes in XML).
 
-I could, for example, use an object to list cities, but because each property requires a name, I'd have to specify the number of them:
+I could, for example, use an object to list cities, but because each property requires a name, I'd have to specify an arbitrary unique name for each entry:
     
     {
         "city1": "Los Angeles",
@@ -179,7 +179,7 @@ I could, for example, use an object to list cities, but because each property re
         "city3": "Chicago"
     }
 
-In the interest of flexibility, I would rather use an array.  That way, it doesn't matter how many cities I'm including, I still have the right list:
+In the interest of flexibility, I would rather use an array.  That way, it doesn't matter how many cities I'm including, I still have the right list, and it's easy to find out how many cities are in the list or do something to them in order:
 
     {
         "cities": ["New York","Los Angeles","Chicago"]   
@@ -293,7 +293,7 @@ You might want to specify units to be more helpful:
 
 You could also put all the data into the `<fighter>` tag as attributes instead, as long as you collapse the two chest measurements:
 
-    <fighter name="Joe Frazier" age="31" weight="210" height="71.5" reach="73.5" biceps="15.5" chestNormal="43" chestExpanded="45" waist="34.5" thigh="26.5" neck="18" calf="15" />
+    <fighter name="Joe Frazier" age="31" weight="210" height="71.5" reach="73.5" biceps="15.5" chest-normal="43" chest-expanded="45" waist="34.5" thigh="26.5" neck="18" calf="15" />
 
 In JSON, it might look like this:
 
