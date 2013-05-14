@@ -241,7 +241,11 @@ To sum up, when looking at JSON, you need to understand:
 * An array is a flat list of values.  Those values can be simple data, or they can be arrays or objects themselves.
 * An object is a set of named properties describing something.  Each one has a value, and that value can be simple data or it can be an array or an object itself.
 
-If you have a choice between getting data as XML or JSON, get whichever you're more comfortable with, unless the data is going to be plugged directly into a web application.  If someone is going to power JavaScript with the data, you want JSON, which is very JavaScript-friendly.  Also keep in mind that there are often multiple perfectly reasonable ways to structure the same data.  Whoever came up with the structure for the data you're getting may have had any number of reasons for doing it the way they did.  Just concentrate on walking through the data so you understand the structure before doing anything else with it.
+## Things to think about ##
+
+If you have a choice between getting data as XML or JSON, get whichever you're more comfortable with, unless the data is going to be plugged directly into a web application.  If someone is going to power JavaScript with the data, you want JSON, which is very JavaScript-friendly.
+
+Also keep in mind that there are often multiple perfectly reasonable ways to structure the same data.  Whoever came up with the structure for the data you're getting may have had any number of reasons for doing it the way they did.  Just concentrate on understanding the structure of the data you're looking at before doing anything else with it.
 
 ## Example: The Thrilla in Manila ##
 
