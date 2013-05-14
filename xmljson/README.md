@@ -179,7 +179,7 @@ I could, for example, use an object to list cities, but because each property re
         "city3": "Chicago"
     }
 
-In the interest of flexibility, I would rather use an array.  That way, it doesn't matter how many cities I'm including, I still have the right list, and it's easy to find out how many cities are in the list or do something to them in order:
+In the interest of flexibility, I would rather use an array.  That way, I can more easily add and subtract items.  It's also easier to use code later to find out how many cities are in the list or do something to them in order.
 
     {
         "cities": ["New York","Los Angeles","Chicago"]   
