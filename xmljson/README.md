@@ -5,7 +5,7 @@ Almost every popular web API returns data in one of two formats: XML or JSON.  T
 
 For example, you can have a list of countries, and each country can have a list of cities, and and each city can have a list of neighborhoods.  Or think of a family tree, which can be represented easily enough in XML or JSON.  You want to track some information about each person (e.g. their date of birth), but also their relationship to everything else.  Every time you try to express complex nested relationships like these in a single two-dimensional table, an angel loses its wings.
 
-*A note on whitespace: In my examples, I indent things and put them on separate lines in order to make it clear what is inside what, but this is just for clarity.  You can get rid of all this whitespace and put everything on one long line and it won't change anything.  Often, when you encounter data in the wild, like via an API, it will be compressed like this, with no extra space.  This is efficient but makes it harder to read.  You can always dump it into a tool that will make it more readable, like [this one](http://jsonformatter.curiousconcept.com/).
+*A note on whitespace: In my examples, I indent things and put them on separate lines in order to make it clear what is inside what, but this is just for clarity.  You can get rid of all this whitespace and put everything on one long line and it won't change anything.  Often, when you encounter data in the wild, like via an API, it will be compressed like this, with no extra space.  This is efficient but makes it harder to read.  You can always dump it into a tool that will make it more readable, like [this one](http://jsonformatter.curiousconcept.com/).*
 
 ## The basics: XML ##
 
