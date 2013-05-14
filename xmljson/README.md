@@ -5,7 +5,7 @@ Almost every popular web API returns data in one of two formats: XML or JSON.  T
 
 For example, you can have a list of countries, and each country can have a list of cities, and and each city can have a list of neighborhoods.  Or think of a family tree, which can be represented easily enough in XML or JSON.  You want to track some information about each person (e.g. their date of birth), but also their relationship to everything else.  Every time you try to express complex nested relationships like these in a single two-dimensional table, an angel loses its wings.
 
-I'll talk briefly about the basic structure of XML and JSON, and then we'll look at some examples.
+*A note on whitespace: In my examples, I indent things and put them on separate lines in order to make it clear what is inside what, but this is just for clarity.  You can get rid of all this whitespace and put everything on one long line and it won't change anything.  Often, when you encounter data in the wild, like via an API, it will be compressed like this, with no extra space.  This is efficient but makes it harder to read.  You can always dump it into a tool that will make it more readable, like [this one](http://jsonformatter.curiousconcept.com/).
 
 ## The basics: XML ##
 
@@ -82,14 +82,16 @@ Reasons vary as to why someone might want to do it one way vs. the other when cr
     <city name="Los Angeles" name="LA">
     </name>
 
-**A note on self-closing tags:** You will also sometimes see an opening tag with no matching closing tag and a slash at the end instead, like this:
+*A note on self-closing tags:* You will also sometimes see an opening tag with no matching closing tag and a slash at the end instead, like this:
 
     <city name="Los Angeles" />
 
 This is just a shorthand way of declaring an element with nothing else inside.
 
     These are equivalent:
+
     <city name="Los Angeles"></city>
+
     <city name="Los Angeles" />
 
 To sum up, when looking at an XML document, you need to understand:
@@ -98,11 +100,11 @@ To sum up, when looking at an XML document, you need to understand:
 * Elements are made up of an opening and closing tag and whatever is in between.  In between it can have simple text and numbers, other elements, or both (or nothing).
 * The opening tag of an element can also have attributes in the format `name="value"`.  Each value should be simple text and numbers, not other elements.
 
-*A note on data types: a common question for people trying to learn about XML and JSON is how to store some special type of data, like a date or a time.  XML and JSON don't generally have a special way of dealing with things like this.  You store them as text or numbers just like anything else, hopefully using some consistent format, like "10/18/2012" or "October 8, 2012" and then deal with parsing that later as needed.
+*A note on data types: a common question for people trying to learn about XML and JSON is how to store some special type of data, like a date or a time.  XML and JSON don't generally have a special way of dealing with things like this.  You store them as text or numbers just like anything else, hopefully using some consistent format, like "10/18/2012" or "October 8, 2012" and then deal with parsing that later as needed.*
 
 ## The basics: JSON ##
 
-JSON is a little trickier than XML unless you have some experience with JavaScript.  JSON is a format made up of **arrays** and **objects**.  When something is surrounded by `[]` square brackets, it's an array.  When something is surrounded by `{}` curly braces, it's an object.  
+JSON is a little trickier than XML unless you have some experience with JavaScript.  JSON is a format largely made up of **arrays** and **objects**.  When something is surrounded by `[]` square brackets, it's an array.  When something is surrounded by `{}` curly braces, it's an object.  
 
 ### Arrays ###
 
@@ -404,7 +406,3 @@ In JSON, it might look like this:
     }
 
 Notice that the fight has three properties: the location, the date, and the fighters.  The value of "fighters" is an array (a list) with two items.  Each of those items is itself an object describing the individual fighter's characteristics.  Most of that data is just a number, but, for example, "nicknames" is an array because a boxer can have any number of nicknames.  If you knew every boxer would have exactly one nickname, you wouldn't need to make that an array.
-
-## Bonus level: how this stuff gets used ##
-
-One of the things that makes XML and JSON great formats for data is their flexibility.  They can both simultaneously express information about things and relationships between them in a consistent way.  This makes them easy to **traverse** and **parse** with a small amount of code.  You can write a program that says "do this for every item in an array", or "do this for every `<city>` element," or "look up this property by name."  From these humble beginnings, a whole lot is possible.
