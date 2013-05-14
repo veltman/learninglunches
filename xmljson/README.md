@@ -169,7 +169,7 @@ Two more examples:
 
 *Note on property names: you can use spaces in your property names if you really want to, like "vice president", but you should avoid it.  "vicePresident" or "vice_president" would be better, because if the data is going to end up used in code later, the spaces can be problematic.*
 
-Arrays are used for expressing a flat list of things (like sibling elements in XML), and objects are used for expressing specific details about something (like element attributes in XML).  Put another way, arrays are used to express something where there might be more than one of that thing, and objects are used to express details about something where a given object would only have that detail once.
+An array is used for expressing a flat list of things (like sibling elements in XML), and an object is used for expressing specific details about one thing (like element attributes in XML).
 
 I could, for example, use an object to list cities, but because each property requires a name, I'd have to specify the number of them:
     
