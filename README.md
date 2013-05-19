@@ -17,6 +17,7 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 * [How the web works, in several bad analogies](webservers/)
 * [Avoiding mistakes when cleaning your data](datahygiene/)
 * [Web APIs](apis/)
+* [XML and JSON](xmljson/)
 
 ### Future Topics ###
 * Scraping
@@ -24,8 +25,6 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 * JavaScript: what can it do and not do?
 * CSS layout and responsive design
 * Maps case study: making the same map three different ways from start to finish
-* Cleaning and checking your data
-* JSON and XML explained
 * [Your topic here] - have ideas?  let me know!
 
 ## Questions/Comments/Suggestions ##
