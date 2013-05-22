@@ -48,3 +48,11 @@ There’s no prize for writing the world’s most beautiful `JOIN` or most deepl
 ## Keep track of what you’re doing ##
 
 Out of any piece of advice on this list, this is the one I’ve most consistently failed to heed.  Don’t be like me.  Keep a log of what you’re doing to the data.  It can be a paper notebook or a slick automatic query logger or file version control with commit messages or a friendly parrot.  It doesn’t matter.  Knowing what exactly you’ve done to your data is important for troubleshooting and undoing mistakes, but it’s essential for quality journalism.
+
+---
+
+## Questions/Comments/Suggestions ##
+Noah Veltman  
+Web: http://noahveltman.com  
+Twitter: [@veltman](http://twitter.com/veltman)  
+Email: [noah@noahveltman.com](mailto:noah@noahveltman.com)  

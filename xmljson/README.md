@@ -410,3 +410,15 @@ In JSON, it might look like this:
     }
 
 Notice that the fight has three properties: the location, the date, and the fighters.  The value of "fighters" is an array (a list) with two items.  Each of those items is itself an object describing the individual fighter's characteristics.  Most of that data is just a number, but, for example, "nicknames" is an array because a boxer can have any number of nicknames.  If you knew every boxer would have exactly one nickname, you wouldn't need to make that an array.
+
+## Creating XML & JSON ##
+
+This primer is mostly designed for you to loosely understand the structure of XML & JSON.  Being able to *create* XML or JSON requires a more detailed and nitpicky understanding of the syntax.  In the meantime, if you have tabular data (e.g. an Excel file), and you want to turn it into XML or JSON, or you just want to see what it looks like as XML/JSON for learning purposes, (Mr. Data Converter)[http://shancarter.com/data_converter/] is a great resource.
+
+---
+
+## Questions/Comments/Suggestions ##
+Noah Veltman  
+Web: http://noahveltman.com  
+Twitter: [@veltman](http://twitter.com/veltman)  
+Email: [noah@noahveltman.com](mailto:noah@noahveltman.com)  

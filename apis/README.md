@@ -299,3 +299,11 @@ APIs are very useful for getting data on a one-off basis, especially if you can 
 [Rotten Tomatoes](http://developer.rottentomatoes.com/)  
 
 A long list of REST APIs: http://www.programmableweb.com/apis/directory/1?protocol=REST
+
+---
+
+## Questions/Comments/Suggestions ##
+Noah Veltman  
+Web: http://noahveltman.com  
+Twitter: [@veltman](http://twitter.com/veltman)  
+Email: [noah@noahveltman.com](mailto:noah@noahveltman.com)  
