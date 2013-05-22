@@ -26,7 +26,7 @@ On the other hand, if you looked at the New York Times mobile site, you'd have a
 
 ![New York Times - mobile](https://raw.github.com/veltman/learninglunches/master/scraping/images/nytimes-mobile.png)
 
-Generally speaking, there are two big tools in the scraper toolbox for how you give a scraper these instructions:
+Generally speaking, there are two big tools in the scraper toolbox for how you give a scraper its instructions:
 
 #### The DOM ####
 
@@ -50,6 +50,14 @@ For example, a table is an element with rows inside of it, and those rows are el
     </table>
 
 You will often have the scraper "traverse" this in some fashion.  Let's say you want all the country names in this table.  You might tell the scraper, "find the table, and get the data from the first cell in each row."  Easy enough, right?  BUT WAIT.  What about the header row?  You don't want to save "COUNTRY NAME" as a country, right?  And what if there is more than one table on the page?  Just because you only see one table doesn't mean there aren't others.  The menu buttons at the top of the page might be a table.  You need to get more specific, like "find the table that has 'COUNTRY NAME' in the first cell, and get the data from the first cell in each row besides the first."
+
+You can give a scraper instructions in terms of particular tags, like:
+
+* Find all the `<td>` tags
+* Find the second `<img>` tag
+* Find every `<a>` tag that's inside the third `<table`> tag
+
+You can also use tag properties, like their IDs and classes, to search more effectively (e.g. "Find every `<a>` tag with the class `external`" would match a tag like `<a href="http://google.com/" class="external">`").
 
 #### Regular expressions ####
 
