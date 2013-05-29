@@ -18,9 +18,9 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 * [Avoiding mistakes when cleaning your data](datahygiene/)
 * [Web APIs](apis/)
 * [XML and JSON](xmljson/)
+* [Scraping the web](scraping/)
 
 ### Future Topics ###
-* Scraping
 * Making charts
 * JavaScript: what can it do and not do?
 * CSS layout and responsive design
