@@ -19,6 +19,7 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 * [Web APIs](apis/)
 * [XML and JSON](xmljson/)
 * [Scraping the web](scraping/)
+* [Performance and the web](performance/)
 
 ### Future Topics ###
 * Making charts
