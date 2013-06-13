@@ -32,7 +32,7 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 
 To make a pretty printable version of any of these, drag this link into your bookmarks toolbar, and then click on it while viewing one of them on GitHub:
 
-<a href="javascript:(function(a){ document.body.innerHTML = document.getElementById("readme").getElementsByTagName("article")[0].outerHTML; })();">Printable GitHub Bookmarklet</a>
+[Printable GitHub Bookmarklet](javascript:(function\(a\){ document.body.innerHTML = document.getElementById\("readme"\).getElementsByTagName\("article"\)[0].outerHTML; }\)\(\);)
 
 ## Questions/Comments/Suggestions ##
 Noah Veltman  
