@@ -28,6 +28,12 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 * Maps case study: making the same map three different ways from start to finish
 * [Your topic here] - have ideas?  let me know!
 
+### Printable versions ###
+
+To make a pretty printable version of any of these, drag this link into your bookmarks toolbar, and then click on it while viewing one of them on GitHub:
+
+<a href="javascript:(function(a){ document.body.innerHTML = document.getElementById("readme").getElementsByTagName("article")[0].outerHTML; })();">Printable GitHub Bookmarklet</a>
+
 ## Questions/Comments/Suggestions ##
 Noah Veltman  
 Web: http://noahveltman.com  
