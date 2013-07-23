@@ -60,10 +60,12 @@ Simply getting to the point where you can write your first line of code can be a
 * Open a command prompt.  On Windows, do this by going to Start Menu->Run and typing in 'cmd', or just searching for 'command prompt'.  On a Mac, do this by going to Applications->Utilities->Terminal.
 * Type `python` at the prompt and hit enter.  You're now in the Python interpreter!  You can put in Python code and it will run it for you.  
 
+	```
 	>>> 1+1
 	2
 	>>> print "Greetings, human."
 	Greetings, human.
+	```	
 
 * Most likely you'll want to work using files instead of doing things one line at a time using this interpreter, although it is a fun way of feeling like you're in the movie *WarGames*.  To run Python code from a file (a "script") instead of opening the interpreter, use the command `python [filename]`.  For example:
 
@@ -80,8 +82,10 @@ If you aren't already in the same folder as your file, you'll need to either nav
 * On Mac OS X, install [MAMP](http://www.mamp.info/en/index.html)
 * Use PHP from the command prompt/terminal much as you would use Python.  To open an interpreter, type `php -a`.  To run PHP code from a file (a "script"), use `php -f [filename]`.  
 
+	```
 	php > echo "Greetings, human.";
 	Greetings, human.
+	```
 
 ### SQL ###
 * If you installed WAMP or MAMP (see above), it comes with MySQL built in.  For some more options for playing with SQL, read the end of [this Learning Lunch on Excel vs. databases](/databases]).
