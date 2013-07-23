@@ -4,11 +4,15 @@
 
 ## Some common newsroom use cases ##
 
-* Turn XML and JSON into something more table-like you can analyze. XML and JSON are wonderful, flexible formats for representing all kinds of data.  But complex, nested data is often more challenging to analyze, especially in the exploratory phases of a project.  If you have five-levels-deep XML full of information you don't need, code is a great way to go through (a.k.a. "traverse" or "parse") nested data and pull out the few choice bits you care about.
-* Loop through a bunch of records and clean them.  Maybe you need to pull out the text, but take out certain punctuation and the word "the".  Maybe you need to extract the ZIP code from a big generic address field.  Maybe you need to figure out what kinds of values are in a list, and fold the weird ones into other values.
-* Loop through a bunch of records and normalize some values.  Maybe you need to adjust numbers for inflation.  Maybe you need to turn latitudes/longitudes expressed with degree symbols into decimal numbers.  Maybe you need to do different things to different rows, depending on some value.
-* Get distinct values, ranges, and averages at a glance.  Are all 50 states represented?  Are there MORE than 50 states represented?  What's the earliest date in the table of school records for private schools in a specific county with average SAT scores between 1300 and 1500?
-* Take a few different tables, or and combine them somehow,  You have a table of senators, and a table of votes, and a table of bills, and you're looking for a particular voting pattern, by senator.
+* **Turn complicated data into a table**, or something more table-like. XML and JSON are wonderful, flexible formats for representing all kinds of data.  But complex, nested data is often more challenging to analyze, especially in the exploratory phases of a project.  If you have five-levels-deep XML full of information you don't need, code is a great way to go through (a.k.a. "traverse" or "parse") nested data and pull out the few choice bits you care about.
+
+* **Loop through a bunch of records and clean them**.  Maybe you need to pull out the text, but take out certain punctuation and the word "the".  Maybe you need to extract the ZIP code from a big generic address field.  Maybe you need to figure out what kinds of values are in a list, and fold the weird ones into other values.
+
+* **Loop through a bunch of records and normalize some values**.  Maybe you need to adjust numbers for inflation.  Maybe you need to turn latitudes/longitudes expressed with degree symbols into decimal numbers.  Maybe you need to do different things to different rows, depending on some value.
+
+* **Get distinct values, ranges, and averages at a glance**.  Are all 50 states represented?  Are there MORE than 50 states represented?  What's the earliest date in the table of school records for private schools in a specific county with average SAT scores between 1300 and 1500?
+
+* **Do something with relationships between multiple tables**.  Maybe you have a table of senators, and a table of votes, and a table of bills, and you're looking for a particular voting pattern, by senator.
 
 ## A note on the "right way" to do this stuff ##
 
@@ -22,29 +26,29 @@ The examples below will generally use one of the following programming languages
 
 If you want to play along at home and write some code, scroll to the end for tips on how to get set up on your local computer.
 
-## Example #1: drone strikes ##
+### Example #1: drone strikes ###
 To do: PHP XML version
 To do: JavaScript version
 
-## Example #2: Pakistan votes ##
+### Example #2: Pakistan votes ###
 To do: JavaScript version
 
-## Example #3: Citi bikes ##
+### Example #3: Citi bikes ###
 To do: JavaScript version
 
-## Example #4: Meat exports ##
+### Example #4: Meat exports ###
 To do: JavaScript version
 
-## Example #5: UK unemployment ##
+### Example #5: UK unemployment ###
 To do: Python version
 To do: SQL version
 
-## Example #6: Cats ##
+### Example #6: Cats ###
 To do: command line
 To do: SQL
 To do: JavaScript
 
-## Example #7: Olympic athletes ##
+### Example #7: Olympic athletes ###
 To do: SQL
 
 ## If you want to play along at home ##
@@ -54,9 +58,9 @@ Simply getting to the point where you can write your first line of code can be a
 ### Python ###
 * On Windows, install Python using one of the [installers](http://www.python.org/download/releases/2.7.5/).  On Mac OS X, you've already got Python on your machine.  You may want to to [upgrade it](http://www.python.org/getit/mac/), though.
 * Open a command prompt.  On Windows, do this by going to Start Menu->Run and typing in 'cmd', or just searching for 'command prompt'.  On a Mac, do this by going to Applications->Utilities->Terminal.
-* Type `python` at the prompt and hit enter.  You're now in the Python interpreter!  You can put in Python code and it will run it for you.
+* Type `python` at the prompt and hit enter.  You're now in the Python interpreter!  You can put in Python code and it will run it for you.  
 
-    >>> 1+1
+	>>> 1+1
 	2
 	>>> print "Greetings, human."
 	Greetings, human.
@@ -74,7 +78,7 @@ If you aren't already in the same folder as your file, you'll need to either nav
 ### PHP ###
 * On Windows, install [WAMP](http://www.wampserver.com/en/)
 * On Mac OS X, install [MAMP](http://www.mamp.info/en/index.html)
-* Use PHP from the command prompt/terminal much as you would use Python.  To open an interpreter, type `php -a`.  To run PHP code from a file (a "script"), use `php -f [filename]`.
+* Use PHP from the command prompt/terminal much as you would use Python.  To open an interpreter, type `php -a`.  To run PHP code from a file (a "script"), use `php -f [filename]`.  
 
 	php > echo "Greetings, human.";
 	Greetings, human.
