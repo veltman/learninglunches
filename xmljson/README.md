@@ -1,4 +1,3 @@
-
 # XML and JSON: the tale of the tape #
 
 Almost every popular web API returns data in one of two formats: XML or JSON.  These formats can be very confusing.  They look very different from how you are probably used to thinking of data.  **XML and JSON are not like a spreadsheet**.  They are both very flexible specifications for representing almost any kind of data.  Both involve nesting, so you can represent complex data with lots of levels.
@@ -41,7 +40,7 @@ In this example, you have a country with two cities in it.  The first city has t
 
 Now each element has attributes.  We know the population of the country, the population of the cities, and the names of everything.  We could add as many attributes as we want.  The tag name tells you **what type of thing** an element is, and the attributes tell you **details about it**.
 
-When you a list of siomilar things in XML, you'll see a list of siblings like those two cities, one after the next.  Sometimes you'll see a list like that enclosed in some sort of container element, like this:
+When you a list of similar things in XML, you'll see a list of siblings like those two cities, one after the next.  Sometimes you'll see a list like that enclosed in some sort of container element, like this:
 
     <country>
         <cities>
