@@ -21,6 +21,10 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 * [Scraping the web](scraping/)
 * [Performance and the web](performance/)
 
+### Other resources ###
+* [Making a map with Leaflet](leaflet/) from a workshop with [Mike Tigas](https://github.com/mtigas)
+* [Command line basics](commandline/)
+
 ### Future Topics ###
 * Making charts
 * JavaScript: what can it do and not do?
@@ -30,14 +34,10 @@ Because these materials are for actual in-person lunch talks, sometimes they wil
 
 ### Printable versions ###
 
-To make a pretty printable version of any of these, drag this link into your bookmarks toolbar, and then click on it while viewing one of them on GitHub:
-
-[Printable GitHub Bookmarklet](javascript:(function\(a\){ document.body.innerHTML = document.getElementById\("readme"\).getElementsByTagName\("article"\)[0].outerHTML; }\)\(\);)
+To make a pretty printable version of any of these, use this bookmarklet: https://gist.github.com/veltman/5772849
 
 ## Questions/Comments/Suggestions ##
 Noah Veltman  
 Web: http://noahveltman.com  
 Twitter: [@veltman](http://twitter.com/veltman)  
 Email: [noah@noahveltman.com](mailto:noah@noahveltman.com)  
-
-
