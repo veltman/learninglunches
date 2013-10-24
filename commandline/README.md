@@ -35,7 +35,7 @@ Specifying a file or directory as a relative path means you are specifying where
 
 	/files/videos$
 
-If you execute a command like `touch newfile.txt`, it will create newfile.txt inside the current directory.  Relative paths don't start with a slash.
+If you execute a command like `touch newfile.txt`, it will create `newfile.txt` inside the current directory.  Relative paths don't start with a slash.
 
 #### Absolute Paths
 
@@ -43,7 +43,7 @@ Specifying a file or directory as an absolute path means you are specifying wher
 
 	/files/videos$
 
-If you execute a command like `touch /files/music/newfile.txt`, it will create newfile.txt inside a different folder, the `music` subfolder of the `files` folder.  *Absolute paths start with a slash.*
+If you execute a command like `touch /files/music/newfile.txt`, it will create `newfile.txt` inside a different folder, the `music` subfolder of the `files` folder.  *Absolute paths start with a slash.*
 
 If you use an absolute path, the command will do the same thing no matter what directory you execute it from.
 
@@ -51,13 +51,13 @@ So, if you type:
 
 	/files/videos$ rm video.mp4
 
-This will delete video.mp4 from the current directory.  But you would get the same result from:
+This will delete the file `video.mp4` from the current directory.  But you would get the same result from:
 
 	/files/videos$ rm /files/videos/video.mp4
 
-This will delete video.mp4 from the /files/videos/ directory, which happens to be the current directory.
+This will delete `video.mp4` from the /files/videos/ directory, which happens to be the current directory.
 
-These two commands will not have the same result if you are in a different directory:
+These same two commands will not have the same result if you are in a different directory:
 
 	/files/text$ rm video.mp4
 	(This will try to delete the file video.mp4 from the 'text' subdirectory instead, because that's the current directory)
@@ -78,9 +78,9 @@ If you're ever unsure of what directory you're in, you can use the `pwd` (Print 
 File Patterns
 -------------
 
-In most cases when you have to specify a file name or folder name, you can also specify a general **pattern** that might match multiple files.  There are lots of ins and outs with this, but the most basic version is using the asterisk (*), which matches anything.  It's also known as a wildcard.
+In most cases when you have to specify a file name or directory name, you can also specify a general **pattern** that might match multiple files.  There are lots of ins and outs with this, but the most basic version is using the asterisk (*), which matches anything.  It's also known as a wildcard.
 
-	Delete any file in the current folder
+	Delete any file in the current directory
 	/files$ rm *
 
 	Delete any file that ends in '.txt'
@@ -92,7 +92,7 @@ In most cases when you have to specify a file name or folder name, you can also 
 Navigating
 ----------
 
-The two core commands for navigating what folder the prompt is in are `cd` and `ls`.
+The two core commands for navigating what directory the prompt is in are `cd` and `ls`.
 
 `cd` stands for "Change Directory" and must be followed by a directory you want to change to.  You can supply an absolute or relative path.
 
@@ -124,7 +124,7 @@ Using `ls -l` will print the list vertically, with lots of other extra informati
 	-rw-rw-r-- 1 noah noah 75640 Oct 22 17:13 photo2.jpg
 	drwxrwxr-x 2 noah noah 4096  Oct 22 17:13 thumbnails
 
-When typing in a folder or file name, you can hit the 'Tab' key to autocomplete if it's possible.  For example, in the /photos folder, if you type in:
+When typing in a directory or file name, you can hit the 'Tab' key to autocomplete if it's possible.  For example, in the /photos folder, if you type in:
 
 	/photos$ cd thu
 
@@ -132,7 +132,7 @@ and hit 'Tab,' it will fill in the rest and show you:
 
 	/photos$ cd thumbnails
 
-However, if there is more than possible file/folder that matches what you've typed so far, it won't work.  If you type:
+However, if there is more than possible file/directory that matches what you've typed so far, it won't work.  If you type:
 
 	/photos$ rm pho
 
@@ -206,11 +206,11 @@ Find matches for the exact *word* "Donald" in a file - words that contain "Donal
 
 	grep -w "Donald" famousducks.txt
 
-Find matches for "McDuck" in every file in the current folder:
+Find matches for "McDuck" in every file in the current directory:
 
 	grep "McDuck" *
 
-Find matches for "McDuck" in every file in the current folder AND every subfolder, all the way down:
+Find matches for "McDuck" in every file in the current directory AND every subdirectory, all the way down:
 
 	grep -r "McDuck" *
 
@@ -247,7 +247,7 @@ Remember that this will just print the output into your terminal.  More likely, 
 
 turducken.txt will contain all of the lines in turkey.txt, followed by all of the lines in duck.txt, followed by all of the lines in chicken.txt.
 
-If you want to combine ALL of the files in a folder, you can use a wildcard:
+If you want to combine ALL of the files in a directory, you can use a wildcard:
 
 	cat * > allfilescombined.txt
 
