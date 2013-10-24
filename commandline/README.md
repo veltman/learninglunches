@@ -50,10 +50,10 @@ If you use an absolute path, the command will do the same thing no matter what d
 So these two commands will have the same result from the `/files/videos` directory:
 
 	/files/videos$ rm video.mp4
-	(This will delete the file `video.mp4` from the current directory)
+	(This will delete the file video.mp4 from the current directory)
 
 	/files/videos$ rm /files/videos/video.mp4
-	(This will delete `video.mp4` from the /files/videos/ directory, which happens to be the current directory)
+	(This will delete video.mp4 from the /files/videos/ directory, which happens to be the current directory)
 
 The same two commands will not have the same result if you are in a different directory:
 
