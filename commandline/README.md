@@ -47,17 +47,15 @@ If you execute a command like `touch /files/music/newfile.txt`, it will create `
 
 If you use an absolute path, the command will do the same thing no matter what directory you execute it from.
 
-So, if you type:
+So these two commands will have the same result from the `/files/videos` directory:
 
 	/files/videos$ rm video.mp4
-
-This will delete the file `video.mp4` from the current directory.  But you would get the same result from:
+	(This will delete the file `video.mp4` from the current directory)
 
 	/files/videos$ rm /files/videos/video.mp4
+	(This will delete `video.mp4` from the /files/videos/ directory, which happens to be the current directory)
 
-This will delete `video.mp4` from the /files/videos/ directory, which happens to be the current directory.
-
-These same two commands will not have the same result if you are in a different directory:
+The same two commands will not have the same result if you are in a different directory:
 
 	/files/text$ rm video.mp4
 	(This will try to delete the file video.mp4 from the 'text' subdirectory instead, because that's the current directory)
@@ -94,13 +92,16 @@ Navigating
 
 The two core commands for navigating what directory the prompt is in are `cd` and `ls`.
 
-`cd` stands for "Change Directory" and must be followed by a directory you want to change to.  You can supply an absolute or relative path.
+`cd` is a command to change the current directory, and must be followed by a directory you want to change to.  You can supply an absolute or relative path.
 
 	This will put you in /files/videos
 	/files$ cd videos	
+	/files/videos$
 
-	This will put you in /videos
+	This will put you in /videos, and then the vines subdirectory
 	/files$ cd /videos
+	/videos$ cd vines
+	/videos/vines$
 
 You can jump multiple levels at once if you want.
 
@@ -290,9 +291,20 @@ This is helpful if you want to, say, remove a header row from a CSV file:
 Miscellaneous
 -------------
 
+If you just want to print out the entire contents of a file into your terminal, you can use `cat` and not combine it with anything.  This is sort of against the whole point of `cat`, but is a handy trick.
+
+	/files$ cat address.txt
+	1600 Pennsylvania Avenue
+	Washington, DC 20500
+
+If you want to get serious and open a file in a text editor that comes built in to your terminal, you can try `nano`:
+
+	/files$ nano address.txt
+
 How many lines are in names.txt?
 
 	/files$ wc -l names.txt
+	18
 
 Regular expressions
 -------------------
